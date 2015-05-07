@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Roman_VIP_Animator : MonoBehaviour {
-
-	public Transform hair, head, body, clothes, rightArm, leftArm, rightShoe, leftShoe;
+public class NewBehaviourScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
