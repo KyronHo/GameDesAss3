@@ -13,10 +13,14 @@ public class NPC_StartUp : MonoBehaviour {
 			Destroy(transform.gameObject);
 		}
 		else print("i aint a spy");
+		foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>()) {
+			sr.material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+
 	}
 }
