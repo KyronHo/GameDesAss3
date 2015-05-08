@@ -9,7 +9,7 @@ public class GlobalScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		seed = Random.Range(0, 6);
+		seed = Random.Range(0, 8);
 	}
 	
 	// Update is called once per frame
