@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
 		}
 		if (Input.GetKeyDown (KeyCode.E)) {
 			if (other.CompareTag ("Roman_NPC")) {
-				print ("i've touched an npc");
+				manager.portrait.showPart(Random.Range (0, 7));
 			}
 		}
 	}
