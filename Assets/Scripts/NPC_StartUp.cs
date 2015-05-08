@@ -27,7 +27,7 @@ public class NPC_StartUp : MonoBehaviour
 		}
 	}
 
-	void npcColor ()
+	public void npcColor ()
 	{
 		npcColors [0] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
 		npcColors [1] = new Color (Random.Range (0.5f, 1f), Random.Range (0.5f, 1f), Random.Range (0.5f, 1f));

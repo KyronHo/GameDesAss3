@@ -8,6 +8,7 @@ public class GlobalScript : MonoBehaviour
 	public int npcNo = 0;
 	public Vector3 enemyPos;
 	public EnemyController enemy;
+	public PortraitController portrait;
 
 	// Use this for initialization
 	void Start ()
