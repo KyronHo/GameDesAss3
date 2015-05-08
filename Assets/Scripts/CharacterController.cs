@@ -4,7 +4,7 @@ using System.Collections;
 public class CharacterController : MonoBehaviour {
 	public float moveSpeed = 1f;
 	public float turnSpeed;
-	public Transform target;
+	public Vector3 lookAt;
 
 	private Vector3 moveDirection;
 
@@ -14,29 +14,30 @@ public class CharacterController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 norTar = (target.position-transform.position).normalized;
-		float angle = Mathf.Atan2(norTar.y,norTar.x)*Mathf.Rad2Deg;
-		// rotate to angle
-		Quaternion rotation = new Quaternion ();
-		rotation.eulerAngles = new Vector3(0,0,angle);
-		transform.rotation = rotation;
-
 		if(Input.GetKey(KeyCode.W))
 		   {
 			transform.position += new Vector3 (0.0f, moveSpeed * Time.deltaTime, 0.0f);
+			lookAt = transform.position + new Vector3 (0.0f, 0.1f, 0.0f);
 		}
 		if(Input.GetKey(KeyCode.A))
 		{
 			transform.position += new Vector3 (-moveSpeed * Time.deltaTime, 0.0f, 0.0f);
+			lookAt = transform.position + new Vector3 (-0.1f, 0.0f, 0.0f);
 		}
 		if(Input.GetKey(KeyCode.S))
 		{
 			transform.position += new Vector3 (0.0f, -moveSpeed * Time.deltaTime, 0.0f);
+			lookAt = transform.position + new Vector3 (0.0f, -0.1f, 0.0f);
 		}
 		if(Input.GetKey(KeyCode.D))
 		{
 			transform.position += new Vector3 (moveSpeed * Time.deltaTime, 0.0f, 0.0f);
+			lookAt = transform.position + new Vector3 (0.1f, 0.0f, 0.0f);
 		}
+
+		Vector3 norTar = (lookAt-transform.position).normalized;
+		float angle = Mathf.Atan2(norTar.y,norTar.x)*Mathf.Rad2Deg;
+		transform.rotation = Quaternion.Slerp( transform.rotation, Quaternion.Euler( 0, 0, angle ), turnSpeed * Time.deltaTime );
 		EnforceBounds ();
 	}
 
