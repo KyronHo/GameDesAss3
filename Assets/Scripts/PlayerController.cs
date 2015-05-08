@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CharacterController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
 	public float moveSpeed = 1f;
 	public float turnSpeed;
@@ -47,6 +47,11 @@ public class CharacterController : MonoBehaviour
 		if (Input.GetKeyDown (KeyCode.X)) {
 			if (other.CompareTag ("Roman_Enemy")) {
 				manager.enemy.EnemyColor ();
+			}
+		}
+		if (Input.GetKeyDown (KeyCode.E)) {
+			if (other.CompareTag ("Roman_NPC")) {
+				print ("i've touched an npc");
 			}
 		}
 	}

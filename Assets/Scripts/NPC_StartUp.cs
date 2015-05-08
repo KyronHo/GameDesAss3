@@ -12,20 +12,7 @@ public class NPC_StartUp : MonoBehaviour
 	void Start ()
 	{
 		manager = GameObject.Find ("GlobalScript").GetComponent<GlobalScript> ();
-		npcColors [0] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
-		npcColors [1] = new Color (Random.Range (0.5f, 1f), Random.Range (0.5f, 1f), Random.Range (0.5f, 1f));
-		npcColors [2] = npcColors [1];
-		npcColors [3] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
-		npcColors [4] = npcColors [1];
-		npcColors [5] = npcColors [1];
-		npcColors [6] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
-		npcColors [7] = npcColors [6];
-
-		foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>()) {
-			sr.material.color = npcColors [i];
-			i++;
-		}
-		i = 0;
+		npcColor ();
 	}
 	
 	// Update is called once per frame
@@ -40,4 +27,21 @@ public class NPC_StartUp : MonoBehaviour
 		}
 	}
 
+	void npcColor ()
+	{
+		npcColors [0] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
+		npcColors [1] = new Color (Random.Range (0.5f, 1f), Random.Range (0.5f, 1f), Random.Range (0.5f, 1f));
+		npcColors [2] = npcColors [1];
+		npcColors [3] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
+		npcColors [4] = npcColors [1];
+		npcColors [5] = npcColors [1];
+		npcColors [6] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
+		npcColors [7] = npcColors [6];
+	
+		foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>()) {
+			sr.material.color = npcColors [i];
+			i++;
+		}
+		i = 0;
+	}
 }

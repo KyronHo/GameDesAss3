@@ -10,6 +10,8 @@ public class EnemyController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		manager = GameObject.Find ("GlobalScript").GetComponent<GlobalScript> ();
+		manager.enemy = this;
 		EnemyColor ();
 	}
 	
@@ -26,8 +28,6 @@ public class EnemyController : MonoBehaviour
 
 	public void EnemyColor ()
 	{
-		manager = GameObject.Find ("GlobalScript").GetComponent<GlobalScript> ();
-		manager.enemy = this;
 		enemyColors [0] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
 		enemyColors [1] = new Color (Random.Range (0.5f, 1f), Random.Range (0.5f, 1f), Random.Range (0.5f, 1f));
 		enemyColors [2] = enemyColors [1];
