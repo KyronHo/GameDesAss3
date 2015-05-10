@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
 	private void Interact ()
 	{
 		interactable.position = transform.position;
-		interactable.position += new Vector3 (0.7f, 0.7f, 0);
+		interactable.position += new Vector3 (0.3f, 0.7f, 0);
 		interactableOn.enabled = true;
 	}
 
