@@ -8,11 +8,13 @@ public class PlayerController : MonoBehaviour
 	public Vector3 lookAt;
 	private Vector3 moveDirection;
 	private GlobalScript manager;
+	private Transform interactable;
 
 	// Use this for initialization
 	void Start ()
 	{
 		manager = GameObject.Find ("GlobalScript").GetComponent<GlobalScript> ();
+		interactable = GameObject.Find ("Interactable").GetComponent<Transform> ();
 	}
 	
 	// Update is called once per frame
@@ -43,7 +45,8 @@ public class PlayerController : MonoBehaviour
 
 	void OnTriggerStay2D (Collider2D other)
 	{
-			
+		interactable.position = transform.position;
+		interactable.position += new Vector3 (0.7f, 0.7f, 0);
 		if (Input.GetKeyDown (KeyCode.X)) {
 			if (other.CompareTag ("Roman_Enemy")) {
 				manager.enemy.EnemyColor ();
@@ -55,6 +58,9 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 	}
+	void OnTriggerExit2D(Collider2D other) {
+		interactable.position = new Vector3 (0, 0, 2f);
+		}
 
 	private void EnforceBounds ()
 	{
