@@ -35,7 +35,6 @@ public class PortraitController : MonoBehaviour
 
 	public void showPart(int part){
 		i = 0;
-		print (part);
 		foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>()) {
 			if(i == part){
 			sr.enabled = true;

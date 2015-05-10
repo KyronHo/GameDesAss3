@@ -5,11 +5,13 @@ public class PlayerController : MonoBehaviour
 {
 	public float moveSpeed = 1f;
 	public float turnSpeed;
-	public Vector3 lookAt;
+//	public Vector3 lookAt;
 	private Vector3 moveDirection;
 	private GlobalScript manager;
 	private Transform interactable;
 	private SpriteRenderer interactableOn;
+	public float angle;
+	public int friendly = 0;
 
 	// Use this for initialization
 	void Start ()
@@ -24,46 +26,57 @@ public class PlayerController : MonoBehaviour
 	{
 		if (Input.GetKey (KeyCode.W)) {
 			transform.position += new Vector3 (0.0f, moveSpeed * Time.deltaTime, 0.0f);
-			lookAt = transform.position + new Vector3 (0.0f, 0.1f, 0.0f);
+			//lookAt = transform.position + new Vector3 (0.0f, 0.1f, 0.0f);
 		}
 		if (Input.GetKey (KeyCode.A)) {
 			transform.position += new Vector3 (-moveSpeed * Time.deltaTime, 0.0f, 0.0f);
-			lookAt = transform.position + new Vector3 (-0.1f, 0.0f, 0.0f);
+			//lookAt = transform.position + new Vector3 (-0.1f, 0.0f, 0.0f);
 		}
 		if (Input.GetKey (KeyCode.S)) {
 			transform.position += new Vector3 (0.0f, -moveSpeed * Time.deltaTime, 0.0f);
-			lookAt = transform.position + new Vector3 (0.0f, -0.1f, 0.0f);
+			//lookAt = transform.position + new Vector3 (0.0f, -0.1f, 0.0f);
 		}
 		if (Input.GetKey (KeyCode.D)) {
 			transform.position += new Vector3 (moveSpeed * Time.deltaTime, 0.0f, 0.0f);
-			lookAt = transform.position + new Vector3 (0.1f, 0.0f, 0.0f);
+			//lookAt = transform.position + new Vector3 (0.1f, 0.0f, 0.0f);
 		}
-
-		Vector3 norTar = (lookAt - transform.position).normalized;
-		float angle = Mathf.Atan2 (norTar.y, norTar.x) * Mathf.Rad2Deg;
-		transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.Euler (0, 0, angle), turnSpeed * Time.deltaTime);
+		if (Input.GetKeyDown (KeyCode.E)) {
+			if (friendly == 2) {
+				manager.portrait.showPart (Random.Range (0, 8));
+			}
+		}
+		if (Input.GetKeyDown (KeyCode.X)) {
+			if (friendly == 1){
+				Application.LoadLevel("Camelot_Intro");
+			}
+		}
+//		Vector3 norTar = (lookAt - transform.position).normalized;
+//		angle = Mathf.Atan2 (norTar.y, norTar.x) * Mathf.Rad2Deg;
+//		transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.Euler (0, 0, angle), turnSpeed * Time.deltaTime);
 		EnforceBounds ();
 	}
 
 	void OnTriggerStay2D (Collider2D other)
 	{
-		interactable.position = transform.position;
-		interactable.position += new Vector3 (0.7f, 0.7f, 0);
-		interactableOn.enabled = true;
-		if (Input.GetKeyDown (KeyCode.X)) {
-			if (other.CompareTag ("Roman_Enemy")) {
-				Application.LoadLevel("Camelot_Intro");
-			}
+		if (other.CompareTag ("Roman_Enemy")) {
+			Interact ();
+			friendly = 1;
 		}
-		if (Input.GetKeyDown (KeyCode.E)) {
-			if (other.CompareTag ("Roman_NPC")) {
-				manager.portrait.showPart(Random.Range (0, 8));
-			}
+		if (other.CompareTag ("Roman_NPC")) {
+			Interact ();
+			friendly = 2;
 		}
 	}
 	void OnTriggerExit2D(Collider2D other) {
 		interactableOn.enabled = false;
 		}
+
+	private void Interact ()
+	{
+		interactable.position = transform.position;
+		interactable.position += new Vector3 (0.7f, 0.7f, 0);
+		interactableOn.enabled = true;
+	}
 
 	private void EnforceBounds ()
 	{
