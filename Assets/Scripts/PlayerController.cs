@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
 		interactableOn.enabled = true;
 		if (Input.GetKeyDown (KeyCode.X)) {
 			if (other.CompareTag ("Roman_Enemy")) {
-				manager.enemy.EnemyColor ();
+				Application.LoadLevel("Camelot_Intro");
 			}
 		}
 		if (Input.GetKeyDown (KeyCode.E)) {
