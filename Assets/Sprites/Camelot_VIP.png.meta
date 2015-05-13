@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: 81b1fe9f33dfa4731a15a5de5fefe850
+timeCreated: 1431524990
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Camelot_VIP_Head
+    21300002: Camelot_VIP_Crown
+    21300004: Camelot_VIP_Body
+    21300006: Camelot_VIP_Coat
+    21300008: Camelot_VIP_Pants
+    21300010: Camelot_VIP_Left_Arms_1
+    21300012: Camelot_VIP_Left_Arms_2
+    21300014: Camelot_VIP_Left_Arms_3
+    21300016: Camelot_VIP_Shoes
+    21300018: Camelot_VIP_Staff
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Camelot_VIP_Head
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 293
+        width: 60
+        height: 54
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Camelot_VIP_Crown
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 25
+        width: 67
+        height: 40
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Camelot_VIP_Body
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 256
+        width: 84
+        height: 79
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Camelot_VIP_Coat
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 126
+        width: 147
+        height: 97
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Camelot_VIP_Pants
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 88
+        width: 85
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Camelot_VIP_Left_Arms_1
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 284
+        width: 80
+        height: 39
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Camelot_VIP_Left_Arms_2
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 191
+        width: 88
+        height: 43
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Camelot_VIP_Left_Arms_3
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 101
+        width: 65
+        height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Camelot_VIP_Shoes
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 49
+        width: 95
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Camelot_VIP_Staff
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 183
+        width: 24
+        height: 129
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
