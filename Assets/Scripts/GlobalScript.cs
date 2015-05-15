@@ -9,11 +9,16 @@ public class GlobalScript : MonoBehaviour
 	public Vector3 enemyPos;
 	public EnemyController enemy;
 	public PortraitController portrait;
+	public int level;
 
 	// Use this for initialization
 	void Start ()
 	{
-		seed = Random.Range (0, 8);
+		if (level == 0) {
+			seed = Random.Range (0, 8);
+		} else if (level == 1) {
+			seed = Random.Range (0, 12); //no. is no.of npcs
+		}
 	}
 	
 	// Update is called once per frame

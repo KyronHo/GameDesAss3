@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 	private SpriteRenderer interactableOn;
 	public float angle;
 	public int friendly = 0;
+	public int level;
 
 	// Use this for initialization
 	void Start ()
@@ -46,24 +47,25 @@ public class PlayerController : MonoBehaviour
 			}
 		}
 		if (Input.GetKeyDown (KeyCode.X)) {
-			if (friendly == 1){
-				Application.LoadLevel("Camelot_Intro");
+			if (friendly == 1)
+			{
+				if(level == 0)
+				{
+					Application.LoadLevel("Camelot_Intro");
+				}
 			}
 		}
-//		Vector3 norTar = (lookAt - transform.position).normalized;
-//		angle = Mathf.Atan2 (norTar.y, norTar.x) * Mathf.Rad2Deg;
-//		transform.rotation = Quaternion.Slerp (transform.rotation, Quaternion.Euler (0, 0, angle), turnSpeed * Time.deltaTime);
 		EnforceBounds ();
 	}
 
 	void OnTriggerStay2D (Collider2D other)
 	{
-		if (other.CompareTag ("Roman_Enemy")) {
-			Interact ();
+		if (other.CompareTag ("Enemy")) {
+			Interact (other);
 			friendly = 1;
 		}
-		if (other.CompareTag ("Roman_NPC")) {
-			Interact ();
+		if (other.CompareTag ("NPC")) {
+			Interact (other);
 			friendly = 2;
 		}
 	}
@@ -71,9 +73,9 @@ public class PlayerController : MonoBehaviour
 		interactableOn.enabled = false;
 		}
 
-	private void Interact ()
+	private void Interact (Collider2D other)
 	{
-		interactable.position = transform.position;
+		interactable.position = other.transform.position;
 		interactable.position += new Vector3 (0.3f, 0.7f, 0);
 		interactableOn.enabled = true;
 	}

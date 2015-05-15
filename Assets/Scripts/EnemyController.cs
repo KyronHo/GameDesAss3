@@ -10,13 +10,17 @@ public class EnemyController : MonoBehaviour
 	private Transform target;
 	private bool placed = false;
 	private float timer = 20;
+	public int level;
 	// Use this for initialization
 	void Start ()
 	{
 		manager = GameObject.Find ("GlobalScript").GetComponent<GlobalScript> ();
 		manager.enemy = this;
-		target = GameObject.Find ("Roman_VIP").GetComponent<Transform> ();
-		EnemyColor ();
+		if (level == 0) 
+		{
+			target = GameObject.Find ("Roman_VIP").GetComponent<Transform> ();
+			EnemyColor ();
+		}
 	}
 	
 	// Update is called once per frame
