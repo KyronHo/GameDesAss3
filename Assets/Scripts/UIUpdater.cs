@@ -8,6 +8,8 @@ public class UIUpdater : MonoBehaviour {
 	private Text timeLeft;
 	private float timer = 0.0f;
 	private float timerMax = 20.0f;
+	public int level;
+	private string vip;
 	
 	void Start () {
 		timeLeft = GetComponent<Text>();
@@ -22,6 +24,11 @@ public class UIUpdater : MonoBehaviour {
 		}
 
 		timer -= Time.deltaTime;
-		timeLeft.text = "Time until Caesar's death: " + timer.ToString("F2") + " Seconds";
+		if (level == 0) {
+			vip = "Caesar";
+		}else if(level ==1) {
+			vip = "Arthur";
+		}
+		timeLeft.text = "Time until "+ vip + "'s death: " + timer.ToString("F2") + " Seconds";
 	}
 }

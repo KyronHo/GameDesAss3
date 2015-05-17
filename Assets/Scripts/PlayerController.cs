@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
 	private void Interact (Collider2D other)
 	{
 		interactable.position = other.transform.position;
-		interactable.position += new Vector3 (0.3f, 0.7f, 0);
+		interactable.position += new Vector3 (0.4f, 0.8f, 0);
 		interactableOn.enabled = true;
 	}
 
