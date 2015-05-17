@@ -23,7 +23,7 @@ public class EnemyController : MonoBehaviour
 			target = GameObject.Find ("Roman_VIP").GetComponent<Transform> ();
 			EnemyColor ();
 		} else if (level == 1) {
-			target = GameObject.Find ("Camelot_VIP").GetComponent<Transform> ();
+			target = GameObject.Find ("Camelot_VIP_Body").GetComponent<Transform> ();
 			type0 = GameObject.Find ("0").GetComponent<Transform>();
 			type1 = GameObject.Find ("1").GetComponent<Transform>();
 			EnemyColor ();
@@ -47,7 +47,9 @@ public class EnemyController : MonoBehaviour
 			i++;
 		}
 		i = 0;
-		Typecheck(manager.enemyType);
+		if (level == 1) {
+			Typecheck (manager.enemyType);
+		}
 		timer -= Time.deltaTime;
 		if (timer <= 2.5f) {
 			MoveTowardsTarget();
@@ -91,8 +93,9 @@ public class EnemyController : MonoBehaviour
 
 	private void MoveTowardsTarget() {
 		Vector3 targetPosition = target.position;
-		targetPosition += new Vector3 (0, -2, 0);
-		
+		if (level == 0) {
+			targetPosition += new Vector3 (0, -2, 0);
+		}
 		Vector3 currentPosition = transform.position;
 
 		if(Vector3.Distance(currentPosition, targetPosition) > .1f) { 

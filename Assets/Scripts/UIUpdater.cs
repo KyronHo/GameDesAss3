@@ -18,7 +18,7 @@ public class UIUpdater : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (timer <= 0) 
+		if (timer <= -1) 
 		{
 			Application.LoadLevel("LoseScene");
 		}

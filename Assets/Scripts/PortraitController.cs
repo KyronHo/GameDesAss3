@@ -14,8 +14,10 @@ public class PortraitController : MonoBehaviour
 	{
 		manager = GameObject.Find ("GlobalScript").GetComponent<GlobalScript> ();
 		manager.portrait = this;
-		type0 = GameObject.Find ("p0").GetComponent<Transform>();
-		type1 = GameObject.Find ("p1").GetComponent<Transform>();
+		if (manager.level == 1) {
+			type0 = GameObject.Find ("p0").GetComponent<Transform> ();
+			type1 = GameObject.Find ("p1").GetComponent<Transform> ();
+		}
 	}
 	
 	// Update is called once per frame
