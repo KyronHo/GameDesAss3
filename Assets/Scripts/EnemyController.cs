@@ -95,8 +95,6 @@ public class EnemyController : MonoBehaviour
 		Vector3 targetPosition = target.position;
 		if (level == 0) {
 			targetPosition += new Vector3 (0, -2, 0);
-		} else if (level == 1) {
-			targetPosition += new Vector3 (-1, 0, 0);
 		}
 		Vector3 currentPosition = transform.position;
 
