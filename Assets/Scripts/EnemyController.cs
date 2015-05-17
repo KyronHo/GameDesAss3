@@ -81,16 +81,9 @@ public class EnemyController : MonoBehaviour
 			foreach (SpriteRenderer sr in type1.GetComponentsInChildren<SpriteRenderer>()) {
 				sr.enabled = false;
 			}
+		} else if (t == 1) {
 			foreach (SpriteRenderer sr in type0.GetComponentsInChildren<SpriteRenderer>()) {
-				sr.enabled = true;
-			}
-			if (t == 1) {
-				foreach (SpriteRenderer sr in type0.GetComponentsInChildren<SpriteRenderer>()) {
 					sr.enabled = false;
-				}
-				foreach (SpriteRenderer sr in type0.GetComponentsInChildren<SpriteRenderer>()) {
-					sr.enabled = true;
-				}
 			}
 		}
 	}
