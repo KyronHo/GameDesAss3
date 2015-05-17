@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: 4d1d68cb642724d4d9f621a86243492c
-timeCreated: 1431863440
+guid: a7fb1be7cdde837439814e7a2d84dbc8
+timeCreated: 1431861857
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Camelot_VIP_death_Head
-    21300002: Camelot_VIP_death_Crown
-    21300004: Camelot_VIP_death_Body
-    21300006: Camelot_VIP_death_Coat
-    21300008: Camelot_VIP_death_Staff
-    21300010: Camelot_VIP_death_Pants
-    21300012: Camelot_VIP_death_Shoes
+    21300000: Camelot_Queen_NPC_Head
+    21300002: Camelot_Queen_NPC_Body
+    21300004: Camelot_Queen_NPC_Right_Hand
+    21300006: Camelot_Queen_NPC_Left_Hand
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -56,73 +53,43 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Camelot_VIP_death_Head
+    - name: Camelot_Queen_NPC_Head
       rect:
         serializedVersion: 2
-        x: 543
-        y: 279
-        width: 61
-        height: 55
+        x: 226
+        y: 262
+        width: 60
+        height: 78
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Camelot_VIP_death_Crown
+    - name: Camelot_Queen_NPC_Body
       rect:
         serializedVersion: 2
-        x: 449
-        y: 303
-        width: 31
-        height: 20
+        x: 204
+        y: 127
+        width: 102
+        height: 81
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Camelot_VIP_death_Body
+    - name: Camelot_Queen_NPC_Right_Hand
       rect:
         serializedVersion: 2
-        x: 207
-        y: 270
-        width: 90
-        height: 62
+        x: 384
+        y: 199
+        width: 49
+        height: 17
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Camelot_VIP_death_Coat
+    - name: Camelot_Queen_NPC_Left_Hand
       rect:
         serializedVersion: 2
-        x: 409
-        y: 156
-        width: 68
-        height: 45
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Camelot_VIP_death_Staff
-      rect:
-        serializedVersion: 2
-        x: 481
-        y: 152
-        width: 11
-        height: 59
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Camelot_VIP_death_Pants
-      rect:
-        serializedVersion: 2
-        x: 325
-        y: 139
-        width: 41
-        height: 24
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Camelot_VIP_death_Shoes
-      rect:
-        serializedVersion: 2
-        x: 337
-        y: 232
-        width: 48
-        height: 16
+        x: 435
+        y: 196
+        width: 51
+        height: 19
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
