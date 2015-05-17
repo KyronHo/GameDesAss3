@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
 	private GlobalScript manager;
 	public Color[] enemyColors = new Color[8];
 	private int i = 0;
+	public float speed;
 	private Transform target;
 	private bool placed = false;
 	private float timer = 20;
@@ -89,9 +90,6 @@ public class EnemyController : MonoBehaviour
 	}
 
 	private void MoveTowardsTarget() {
-
-		float speed = 3f;
-
 		Vector3 targetPosition = target.position;
 		targetPosition += new Vector3 (0, -2, 0);
 		
