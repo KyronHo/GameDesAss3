@@ -43,7 +43,12 @@ public class PlayerController : MonoBehaviour
 		}
 		if (Input.GetKeyDown (KeyCode.E)) {
 			if (friendly == 2) {
-				manager.portrait.showPart (Random.Range (0, 8));
+				if (manager.level == 1){
+				manager.portrait.showPart (Random.Range (0, 8), manager.enemyType);
+				}
+				else{
+					manager.portrait.showPart (Random.Range (0, 8));
+				}
 			}
 		}
 		if (Input.GetKeyDown (KeyCode.X)) {
