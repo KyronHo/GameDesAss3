@@ -9,6 +9,7 @@ public class GlobalScript : MonoBehaviour
 	public Vector3 enemyPos;
 	public EnemyController enemy;
 	public PortraitController portrait;
+	public UIUpdater ui;
 	public int enemyType;
 	public int level;
 

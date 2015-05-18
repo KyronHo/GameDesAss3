@@ -66,6 +66,9 @@ public class PlayerController : MonoBehaviour
 				}
 			}
 		}
+		if (manager.ui.timer <= -1) {
+			this.enabled = false;
+		}
 		EnforceBounds ();
 	}
 

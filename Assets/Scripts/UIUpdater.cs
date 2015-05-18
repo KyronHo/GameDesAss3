@@ -6,15 +6,19 @@ public class UIUpdater : MonoBehaviour {
 	
 	// Use this for initialization
 	private Text timeLeft;
-	private float timer = 0.0f;
+	public float timer = 0.0f;
 	private float timerMax = 20.0f;
 	public int level;
 	private string vip;
 	public GameObject loseScreen;
+	private GlobalScript manager;
+
 	
 	void Start () {
 		timeLeft = GetComponent<Text>();
 		timer = timerMax;
+		manager = GameObject.Find ("GlobalScript").GetComponent<GlobalScript> ();
+		manager.ui = this;
 	}
 	
 	// Update is called once per frame
