@@ -17,9 +17,6 @@ public class IntroTimer : MonoBehaviour {
 			if(level ==0){
 			Application.LoadLevel("Roman_Level");
 			}
-			else if(level == 1){
-				Application.LoadLevel("Camelot_Level");
-			}
 		}
 	}
 }

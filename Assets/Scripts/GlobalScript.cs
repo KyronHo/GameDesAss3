@@ -9,7 +9,6 @@ public class GlobalScript : MonoBehaviour
 	public Vector3 enemyPos;
 	public EnemyController enemy;
 	public PortraitController portrait;
-	public int enemyType;
 	public int level;
 
 	// Use this for initialization
@@ -31,11 +30,6 @@ public class GlobalScript : MonoBehaviour
 	public void SetEnemyPos (Vector3 i)
 	{
 		enemyPos = i;
-	}
-
-	public void SetEnemyType(int i)
-	{
-		enemyType = i;
 	}
 
 	public bool EnemyCheck ()

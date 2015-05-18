@@ -43,12 +43,7 @@ public class PlayerController : MonoBehaviour
 		}
 		if (Input.GetKeyDown (KeyCode.E)) {
 			if (friendly == 2) {
-				if (manager.level == 1){
-				manager.portrait.showPart (Random.Range (0, 8), manager.enemyType);
-				}
-				else{
-					manager.portrait.showPart (Random.Range (0, 8));
-				}
+				manager.portrait.showPart (Random.Range (0, 8));
 			}
 		}
 		if (Input.GetKeyDown (KeyCode.X)) {
@@ -81,7 +76,7 @@ public class PlayerController : MonoBehaviour
 	private void Interact (Collider2D other)
 	{
 		interactable.position = other.transform.position;
-		interactable.position += new Vector3 (0.4f, 0.8f, 0);
+		interactable.position += new Vector3 (0.3f, 0.7f, 0);
 		interactableOn.enabled = true;
 	}
 

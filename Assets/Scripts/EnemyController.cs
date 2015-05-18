@@ -7,25 +7,18 @@ public class EnemyController : MonoBehaviour
 	private GlobalScript manager;
 	public Color[] enemyColors = new Color[8];
 	private int i = 0;
-	public float speed;
 	private Transform target;
 	private bool placed = false;
 	private float timer = 20;
-	private Transform type0;
-	private Transform type1;
 	public int level;
 	// Use this for initialization
 	void Start ()
 	{
 		manager = GameObject.Find ("GlobalScript").GetComponent<GlobalScript> ();
 		manager.enemy = this;
-		if (level == 0) {
+		if (level == 0) 
+		{
 			target = GameObject.Find ("Roman_VIP").GetComponent<Transform> ();
-			EnemyColor ();
-		} else if (level == 1) {
-			target = GameObject.Find ("Camelot_VIP_Body").GetComponent<Transform> ();
-			type0 = GameObject.Find ("0").GetComponent<Transform>();
-			type1 = GameObject.Find ("1").GetComponent<Transform>();
 			EnemyColor ();
 		}
 	}
@@ -39,17 +32,11 @@ public class EnemyController : MonoBehaviour
 			placed = true;
 		}
 		foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>()) {
-			if(i== enemyColors.Length)
-			{
-				i=0;
-			}
 			sr.material.color = enemyColors [i];
 			i++;
 		}
 		i = 0;
-		if (level == 1) {
-			Typecheck (manager.enemyType);
-		}
+
 		timer -= Time.deltaTime;
 		if (timer <= 2.5f) {
 			MoveTowardsTarget();
@@ -68,36 +55,20 @@ public class EnemyController : MonoBehaviour
 		enemyColors [7] = enemyColors [6];
 		
 		foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>()) {
-			if(i== enemyColors.Length)
-			{
-				i=0;
-			}
 			sr.material.color = enemyColors [i];
 			i++;
 		}
 		i = 0;
 	}
 
-	public void Typecheck(int t)
-	{
-		if (t == 0) {
-			foreach (SpriteRenderer sr in type1.GetComponentsInChildren<SpriteRenderer>()) {
-				sr.enabled = false;
-			}
-		} else if (t == 1) {
-			foreach (SpriteRenderer sr in type0.GetComponentsInChildren<SpriteRenderer>()) {
-					sr.enabled = false;
-			}
-		}
-	}
 
 	private void MoveTowardsTarget() {
+
+		float speed = 3f;
+
 		Vector3 targetPosition = target.position;
-		if (level == 0) {
-			targetPosition += new Vector3 (0, -2, 0);
-		} else if (level == 1) {
-			targetPosition += new Vector3 (-1, 0, 0);
-		}
+		targetPosition += new Vector3 (0, -2, 0);
+		
 		Vector3 currentPosition = transform.position;
 
 		if(Vector3.Distance(currentPosition, targetPosition) > .1f) { 

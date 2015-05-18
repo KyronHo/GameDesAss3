@@ -5,9 +5,8 @@ public class NPC_StartUp : MonoBehaviour
 {
 
 	private GlobalScript manager;
-	public bool checkIn = false;
+	private bool checkIn = false;
 	private int i = 0;
-	public int npcType;
 	private Color[] npcColors = new Color[8];
 	// Use this for initialization
 	void Start ()
@@ -21,7 +20,6 @@ public class NPC_StartUp : MonoBehaviour
 	{
 		if (checkIn == false) {
 			if (manager.EnemyCheck ()) {
-				manager.SetEnemyType(npcType);
 				manager.SetEnemyPos (transform.position);
 				Destroy (transform.gameObject);
 			}
