@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 			if (friendly == 2) {
 				if (manager.level == 1){
 				manager.portrait.showPart (Random.Range (0, 8), manager.enemyType);
-					friendly = 1;
+					friendly = 3;
 				}
 				else{
 					manager.portrait.showPart (Random.Range (0, 8));
@@ -59,6 +59,10 @@ public class PlayerController : MonoBehaviour
 				{
 					Application.LoadLevel("Camelot_Intro");
 				}
+				if(level == 1)
+				{
+					Application.LoadLevel("Sengoku_Level");
+				}
 			}
 		}
 		EnforceBounds ();
@@ -66,13 +70,16 @@ public class PlayerController : MonoBehaviour
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		if (other.CompareTag ("Enemy")) {
-			Interact (other);
-			friendly = 1;
-		}
 		if (other.CompareTag ("NPC")) {
 			Interact (other);
 			friendly = 2;
+		}
+	}
+
+	void OnTriggerStay2D (Collider2D other){
+		if (other.CompareTag ("Enemy")) {
+			Interact (other);
+			friendly = 1;
 		}
 	}
 
