@@ -16,6 +16,8 @@ public class RestartGame : MonoBehaviour {
 			Application.LoadLevel ("Roman_Level");
 		} else if (level == 2) {
 			Application.LoadLevel ("Camelot_Level");
+		} else if (level == 3) {
+			Application.LoadLevel ("Sengoku_Level");
 		}
 	}
 }
