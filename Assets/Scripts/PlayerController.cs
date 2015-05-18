@@ -46,11 +46,15 @@ public class PlayerController : MonoBehaviour
 				if (manager.level == 1){
 				manager.portrait.showPart (Random.Range (0, 8), manager.enemyType);
 					friendly = 3;
+					interactableOn.enabled = false;
 				}
 				else{
 					manager.portrait.showPart (Random.Range (0, 8));
 					friendly = 3;
+					interactableOn.enabled = false;
 				}
+			}else{
+				interactableOn.enabled = false;
 			}
 		}
 		if (Input.GetKeyDown (KeyCode.X)) {
@@ -66,7 +70,7 @@ public class PlayerController : MonoBehaviour
 				}
 			}
 		}
-		if (manager.ui.timer <= -1) {
+		if (manager.ui.timer <= 0) {
 			this.enabled = false;
 		}
 		EnforceBounds ();
@@ -88,8 +92,12 @@ public class PlayerController : MonoBehaviour
 	}
 
 	void OnTriggerExit2D(Collider2D other) {
-		interactableOn.enabled = false;
+		interacted ();
 		}
+
+	private void interacted(){
+		interactableOn.enabled = false;
+	}
 
 	private void Interact (Collider2D other)
 	{
