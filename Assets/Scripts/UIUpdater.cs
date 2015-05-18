@@ -10,6 +10,7 @@ public class UIUpdater : MonoBehaviour {
 	private float timerMax = 20.0f;
 	public int level;
 	private string vip;
+	public GameObject loseScreen;
 	
 	void Start () {
 		timeLeft = GetComponent<Text>();
@@ -18,12 +19,13 @@ public class UIUpdater : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		timer -= Time.deltaTime;
 		if (timer <= -1) 
 		{
-			Application.LoadLevel("LoseScene");
+			loseScreen.SetActive(true);
+			timer = -1;
 		}
 
-		timer -= Time.deltaTime;
 		if (level == 0) {
 			vip = "Caesar";
 		} else if (level == 1) {

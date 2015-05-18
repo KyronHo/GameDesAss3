@@ -12,10 +12,10 @@ public class RestartGame : MonoBehaviour {
 	void LoadLevel() {
 		if (level == 0) {
 			Application.LoadLevel ("Roman_Intro");
-		}
-		else if (level == 1)
-		{
+		} else if (level == 1) {
 			Application.LoadLevel ("Roman_Level");
+		} else if (level == 2) {
+			Application.LoadLevel ("Camelot_Level");
 		}
 	}
 }
