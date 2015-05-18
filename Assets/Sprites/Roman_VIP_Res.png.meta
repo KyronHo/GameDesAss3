@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 480c1f7d9adcd46c0a39355792dd968e
-timeCreated: 1431261331
+timeCreated: 1431793902
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -13,6 +13,8 @@ TextureImporter:
     21300012: Roman_VIP_Res_Left_Arm
     21300014: Roman_VIP_Res_Right_Shoe
     21300016: Roman_VIP_Res_Left_Shoe
+    21300018: Roman_VIP_Res_deadeye
+    21300020: Roman_VIP_Res_blood
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -145,6 +147,26 @@ TextureImporter:
         y: 106
         width: 20
         height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Roman_VIP_Res_deadeye
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 69
+        width: 46
+        height: 23
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Roman_VIP_Res_blood
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 11
+        width: 134
+        height: 82
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
