@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 81b1fe9f33dfa4731a15a5de5fefe850
-timeCreated: 1431524990
+timeCreated: 1431837869
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -9,9 +9,9 @@ TextureImporter:
     21300004: Camelot_VIP_Body
     21300006: Camelot_VIP_Coat
     21300008: Camelot_VIP_Pants
-    21300010: Camelot_VIP_Left_Arms_1
+    21300010: Camelot_VIP_right_Arms_1
     21300012: Camelot_VIP_Left_Arms_2
-    21300014: Camelot_VIP_Left_Arms_3
+    21300014: Camelot_VIP_Left_Arms_1
     21300016: Camelot_VIP_Shoes
     21300018: Camelot_VIP_Staff
   serializedVersion: 2
@@ -109,7 +109,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Camelot_VIP_Left_Arms_1
+    - name: Camelot_VIP_right_Arms_1
       rect:
         serializedVersion: 2
         x: 46
@@ -129,7 +129,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Camelot_VIP_Left_Arms_3
+    - name: Camelot_VIP_Left_Arms_1
       rect:
         serializedVersion: 2
         x: 61
