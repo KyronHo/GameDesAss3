@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
 				}
 				else{
 					manager.portrait.showPart (Random.Range (0, 8));
+					friendly = 3;
 				}
 			}
 		}
