@@ -13,6 +13,10 @@ public class InteractableAnimator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		enabled ();
+	}
+	
+	void enabled (){
 		int index = (int)(Time.timeSinceLevelLoad * framesPerSecond);
 		index = index % sprites.Length;
 		spriteRenderer.sprite = sprites[ index ];
