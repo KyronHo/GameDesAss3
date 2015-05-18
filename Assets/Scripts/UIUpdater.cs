@@ -26,8 +26,10 @@ public class UIUpdater : MonoBehaviour {
 		timer -= Time.deltaTime;
 		if (level == 0) {
 			vip = "Caesar";
-		}else if(level ==1) {
+		} else if (level == 1) {
 			vip = "Arthur";
+		} else if (level == 2) {
+			vip = "Hideyoshi";
 		}
 		timeLeft.text = "Time until "+ vip + "'s death: " + timer.ToString("F2") + " Seconds";
 	}

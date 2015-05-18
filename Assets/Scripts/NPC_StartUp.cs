@@ -8,7 +8,7 @@ public class NPC_StartUp : MonoBehaviour
 	public bool checkIn = false;
 	private int i = 0;
 	public int npcType;
-	private Color[] npcColors = new Color[8];
+	private Color[] npcColors = new Color[10];
 	// Use this for initialization
 	void Start ()
 	{
@@ -39,7 +39,9 @@ public class NPC_StartUp : MonoBehaviour
 		npcColors [5] = npcColors [1];
 		npcColors [6] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
 		npcColors [7] = npcColors [6];
-	
+		npcColors [8] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
+		npcColors [9] = npcColors [8];
+
 		foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>()) {
 			sr.material.color = npcColors [i];
 			i++;

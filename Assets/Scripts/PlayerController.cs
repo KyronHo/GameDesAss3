@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
 			if (friendly == 2) {
 				if (manager.level == 1){
 				manager.portrait.showPart (Random.Range (0, 8), manager.enemyType);
+					friendly = 1;
 				}
 				else{
 					manager.portrait.showPart (Random.Range (0, 8));
@@ -63,7 +64,7 @@ public class PlayerController : MonoBehaviour
 		EnforceBounds ();
 	}
 
-	void OnTriggerStay2D (Collider2D other)
+	void OnTriggerEnter2D (Collider2D other)
 	{
 		if (other.CompareTag ("Enemy")) {
 			Interact (other);
@@ -74,6 +75,7 @@ public class PlayerController : MonoBehaviour
 			friendly = 2;
 		}
 	}
+
 	void OnTriggerExit2D(Collider2D other) {
 		interactableOn.enabled = false;
 		}
