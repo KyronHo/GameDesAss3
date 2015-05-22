@@ -38,8 +38,11 @@ public class NPC_StartUp : MonoBehaviour
 
 	public void npcColor ()
 	{
-		npcColors [0] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
-		npcColors [1] = new Color (Random.Range (0.3f, 1f), Random.Range (0.3f, 1f), Random.Range (0.3f, 1f));
+		redSkin = Random.Range (0.5f, 1f) + Random.Range(0, Random.Range (0f, .4f));
+		blueSkin = redSkin - Random.Range(.15f, .3f);
+		greenSkin = (redSkin + blueSkin)/2 - Random.Range(0f, .3f);
+		npcColors [0] = new Color (Random.Range (0f, 1f), greenSkin, Random.Range (0f, 1f));
+		npcColors [1] = new Color (redSkin, blueSkin, greenSkin);
 		npcColors [2] = npcColors [1];
 		npcColors [3] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
 		npcColors [4] = npcColors [1];
