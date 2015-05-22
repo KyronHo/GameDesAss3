@@ -12,6 +12,7 @@ public class NPC_StartUp : MonoBehaviour
 	private float redSkin;
 	private float blueSkin;
 	private float greenSkin;
+	private float whiteSkin;
 	// Use this for initialization
 	void Start ()
 	{
@@ -62,11 +63,15 @@ public class NPC_StartUp : MonoBehaviour
 	public void lv2NPCColor()
 	{
 		if (npcType == 0) {
-			npcColors [0] = new Color (Random.Range (.3f, .6f), Random.Range (.3f, .6f), Random.Range (.3f, .6f));
-			npcColors [1] = npcColors [0] + new Color (Random.Range (-.3f, .3f), Random.Range (-.3f, .3f), Random.Range (-.3f, .3f));
+			redSkin = Random.Range (.7f, 1f);
+			greenSkin = redSkin - Random.Range(0f, .2f);
+			blueSkin = redSkin - Random.Range(.2f, .5f);
+			whiteSkin = Random.Range(0, Random.Range(0, 0.5f));
+			npcColors [0] = new Color (redSkin - whiteSkin, greenSkin - whiteSkin, blueSkin - whiteSkin);
+			npcColors [1] = npcColors [0] + new Color (Random.Range (-.1f, .1f), Random.Range (-.1f, .1f), Random.Range (-.1f, .1f));
 			npcColors [2] = npcColors [1];
 			npcColors [3] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
-			npcColors [4] = npcColors [0] + new Color (Random.Range (-.3f, .3f), Random.Range (-.3f, .3f), Random.Range (-.3f, .3f));
+			npcColors [4] = npcColors [0] + new Color (Random.Range (-.1f, .1f), Random.Range (-.1f, .3f), Random.Range (-.1f, .1f));
 			npcColors [5] = npcColors [4];
 		} else {
 			redSkin = Random.Range (0.5f, 1f);
@@ -76,7 +81,7 @@ public class NPC_StartUp : MonoBehaviour
 			npcColors [1] = new Color (.2f, Random.Range (0f, .5f)+.2f, Random.Range (0f, .5f)+.2f);
 			npcColors [2] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
 			npcColors [3] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
-			npcColors [4] = npcColors[2] + new Color (Random.Range (-.3f, .3f), Random.Range (-.3f, .3f), Random.Range (-.3f, .3f));
+			npcColors [4] = npcColors[2] + new Color (Random.Range (-.2f, .2f), Random.Range (-.2f, .2f), Random.Range (-.3f, .3f));
 			npcColors [5] = npcColors[4];
 			npcColors [6] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
 			npcColors [7] = npcColors [6];

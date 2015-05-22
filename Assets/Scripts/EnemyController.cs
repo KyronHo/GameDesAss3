@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
 	private float redSkin;
 	private float blueSkin;
 	private float greenSkin;
+	private float whiteSkin;
 	// Use this for initialization
 	void Start ()
 	{
@@ -40,15 +41,16 @@ public class EnemyController : MonoBehaviour
 			transform.position = manager.enemyPos;
 			placed = true;
 		}
-		foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>()) {
-			if(i== enemyColors.Length)
-			{
-				i=0;
+		if (level == 0) {
+			foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>()) {
+				if (i == enemyColors.Length) {
+					i = 0;
+				}
+				sr.material.color = enemyColors [i];
+				i++;
 			}
-			sr.material.color = enemyColors [i];
-			i++;
+			i = 0;
 		}
-		i = 0;
 		if (level == 1) {
 			Typecheck (manager.enemyType);
 			lv2EnemyColor();
@@ -61,7 +63,7 @@ public class EnemyController : MonoBehaviour
 
 	public void EnemyColor ()
 	{
-		redSkin = Random.Range (0.5f, 1f) + Random.Range (0f, .4f);
+		redSkin = Random.Range (0.5f, 1f) + Random.Range(0, Random.Range (0f, .4f));
 		blueSkin = redSkin - Random.Range(.15f, .3f);
 		greenSkin = (redSkin + blueSkin)/2 - Random.Range(0f, .3f);
 		enemyColors [0] = new Color (Random.Range (0f, 1f), greenSkin, Random.Range (0f, 1f));
@@ -88,14 +90,16 @@ public class EnemyController : MonoBehaviour
 	{
 		if (redSkin == 0) {
 			if (manager.enemyType == 0) {
-				enemyColors [0] = new Color (Random.Range (.3f, .6f), Random.Range (.3f, .6f), Random.Range (.3f, .6f));
-				enemyColors [1] = enemyColors [0] + new Color (Random.Range (-.3f, .3f), Random.Range (-.3f, .3f), Random.Range (-.3f, .3f));
+				redSkin = Random.Range (.7f, 1f);
+				greenSkin = redSkin - Random.Range(0f, .2f);
+				blueSkin = redSkin - Random.Range(.2f, .5f);
+				whiteSkin = Random.Range(0, Random.Range(0, 0.5f));
+				enemyColors [0] = new Color (redSkin - whiteSkin, greenSkin - whiteSkin, blueSkin - whiteSkin);
+				enemyColors [1] = enemyColors [0] + new Color (Random.Range (-.1f, .1f), Random.Range (-.1f, .1f), Random.Range (-.1f, .1f));
 				enemyColors [2] = enemyColors [1];
 				enemyColors [3] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
-				enemyColors [4] = enemyColors [0] + new Color (Random.Range (-.3f, .3f), Random.Range (-.3f, .3f), Random.Range (-.3f, .3f));
+				enemyColors [4] = enemyColors [0] + new Color (Random.Range (-.1f, .1f), Random.Range (-.1f, .1f), Random.Range (-.1f, .1f));
 				enemyColors [5] = enemyColors [4];
-				enemyColors [6] = enemyColors [4];
-				enemyColors [7] = enemyColors [4];
 				redSkin = 1;
 			} else {
 				redSkin = Random.Range (0.5f, 1f);
@@ -110,10 +114,11 @@ public class EnemyController : MonoBehaviour
 				enemyColors [6] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
 				enemyColors [7] = enemyColors [6];
 			}
-		
+			whiteSkin = 0;
 			foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>()) {
-				if (i == enemyColors.Length) {
+				if (i == 6 && whiteSkin ==0) {
 					i = 0;
+					whiteSkin = 1;
 				}
 				sr.material.color = enemyColors [i];
 				i++;
@@ -130,7 +135,8 @@ public class EnemyController : MonoBehaviour
 			}
 		} else if (t == 1) {
 			foreach (SpriteRenderer sr in type0.GetComponentsInChildren<SpriteRenderer>()) {
-					sr.enabled = false;
+				sr.enabled = false;
+
 			}
 		}
 	}
