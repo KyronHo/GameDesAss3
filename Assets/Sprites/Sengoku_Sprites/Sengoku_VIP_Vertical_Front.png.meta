@@ -1,0 +1,110 @@
+fileFormatVersion: 2
+guid: cdddb04f4061d74409906ba5e6fe1e43
+timeCreated: 1432271451
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Sengoku_VIP_Vertical_Front_Shogun
+    21300002: Sengoku_VIP_Vertical_Back_Leg_Right
+    21300004: Sengoku_VIP_Vertical_Back_Leg_Left
+    21300006: Sengoku_VIP_Vertical_Front_Leg_Right
+    21300008: Sengoku_VIP_Vertical_Front_Leg_Left
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Sengoku_VIP_Vertical_Front_Shogun
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 570
+        width: 86
+        height: 195
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sengoku_VIP_Vertical_Back_Leg_Right
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 672
+        width: 36
+        height: 103
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sengoku_VIP_Vertical_Back_Leg_Left
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 680
+        width: 35
+        height: 103
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sengoku_VIP_Vertical_Front_Leg_Right
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 550
+        width: 40
+        height: 102
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Sengoku_VIP_Vertical_Front_Leg_Left
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 550
+        width: 35
+        height: 102
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
