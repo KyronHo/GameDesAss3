@@ -81,14 +81,13 @@ public class PlayerController : MonoBehaviour
 		if (other.CompareTag ("NPC")) {
 			Interact (other);
 			friendly = 2;
+		}else if (other.CompareTag ("Enemy")) {
+			Interact (other);
+			friendly = 1;
 		}
 	}
 
 	void OnTriggerStay2D (Collider2D other){
-		if (other.CompareTag ("Enemy")) {
-			Interact (other);
-			friendly = 1;
-		}
 	}
 
 	void OnTriggerExit2D(Collider2D other) {

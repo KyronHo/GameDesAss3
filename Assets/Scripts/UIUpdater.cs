@@ -37,6 +37,6 @@ public class UIUpdater : MonoBehaviour {
 		} else if (level == 2) {
 			vip = "Hideyoshi";
 		}
-		timeLeft.text = "Time until "+ vip + "'s death: " + timer.ToString("F2") + " Seconds";
+		timeLeft.text = timer.ToString("F2");//"Time until "+ vip + "'s death: " + timer.ToString("F2") + " Seconds";
 	}
 }
