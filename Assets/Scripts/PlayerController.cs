@@ -76,6 +76,12 @@ public class PlayerController : MonoBehaviour
 		EnforceBounds ();
 	}
 
+	void OnTriggerExit2D(Collider2D other) {
+		if (interactable.position == (other.transform.position + new Vector3 (0.4f, 0.8f, 0))) {
+			interacted ();
+		}
+	}
+
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		if (other.CompareTag ("NPC")) {
@@ -89,10 +95,6 @@ public class PlayerController : MonoBehaviour
 
 	void OnTriggerStay2D (Collider2D other){
 	}
-
-	void OnTriggerExit2D(Collider2D other) {
-		interacted ();
-		}
 
 	private void interacted(){
 		interactableOn.enabled = false;

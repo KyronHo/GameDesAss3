@@ -9,7 +9,7 @@ public class UIUpdater : MonoBehaviour {
 	public float timer = 0.0f;
 	private float timerMax = 20.0f;
 	public int level;
-	private string vip;
+//	private string vip;
 	public GameObject loseScreen;
 	private GlobalScript manager;
 
@@ -30,13 +30,13 @@ public class UIUpdater : MonoBehaviour {
 			timer = -1;
 		}
 
-		if (level == 0) {
-			vip = "Caesar";
-		} else if (level == 1) {
-			vip = "Arthur";
-		} else if (level == 2) {
-			vip = "Hideyoshi";
-		}
+//		if (level == 0) {
+//			vip = "Caesar";
+//		} else if (level == 1) {
+//			vip = "Arthur";
+//		} else if (level == 2) {
+//			vip = "Hideyoshi";
+//		}
 		timeLeft.text = timer.ToString("F2");//"Time until "+ vip + "'s death: " + timer.ToString("F2") + " Seconds";
 	}
 }

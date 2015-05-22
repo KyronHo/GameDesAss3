@@ -14,6 +14,9 @@ public class EnemyController : MonoBehaviour
 	private Transform type0;
 	private Transform type1;
 	public int level;
+	private float redSkin;
+	private float blueSkin;
+	private float greenSkin;
 	// Use this for initialization
 	void Start ()
 	{
@@ -26,7 +29,6 @@ public class EnemyController : MonoBehaviour
 			target = GameObject.Find ("Camelot_VIP_Body").GetComponent<Transform> ();
 			type0 = GameObject.Find ("0").GetComponent<Transform>();
 			type1 = GameObject.Find ("1").GetComponent<Transform>();
-			EnemyColor ();
 		}
 	}
 	
@@ -49,6 +51,7 @@ public class EnemyController : MonoBehaviour
 		i = 0;
 		if (level == 1) {
 			Typecheck (manager.enemyType);
+			lv2EnemyColor();
 		}
 		timer -= Time.deltaTime;
 		if (timer <= 2.5f) {
@@ -76,6 +79,44 @@ public class EnemyController : MonoBehaviour
 			i++;
 		}
 		i = 0;
+	}
+
+	public void lv2EnemyColor()
+	{
+		if (redSkin == 0) {
+			if (manager.enemyType == 0) {
+				enemyColors [0] = new Color (Random.Range (.3f, .6f), Random.Range (.3f, .6f), Random.Range (.3f, .6f));
+				enemyColors [1] = enemyColors [0] + new Color (Random.Range (-.3f, .3f), Random.Range (-.3f, .3f), Random.Range (-.3f, .3f));
+				enemyColors [2] = enemyColors [1];
+				enemyColors [3] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
+				enemyColors [4] = enemyColors [0] + new Color (Random.Range (-.3f, .3f), Random.Range (-.3f, .3f), Random.Range (-.3f, .3f));
+				enemyColors [5] = enemyColors [4];
+				enemyColors [6] = enemyColors [4];
+				enemyColors [7] = enemyColors [4];
+				redSkin = 1;
+			} else {
+				redSkin = Random.Range (0.5f, 1f);
+				blueSkin = redSkin - Random.Range (.15f, .3f);
+				greenSkin = (redSkin + blueSkin) / 2 - Random.Range (0f, .3f);
+				enemyColors [0] = new Color (redSkin, blueSkin, greenSkin);
+				enemyColors [1] = new Color (.2f, Random.Range (0f, .5f) + .2f, Random.Range (0f, .5f) + .2f);
+				enemyColors [2] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
+				enemyColors [3] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
+				enemyColors [4] = enemyColors [2] + new Color (Random.Range (-.3f, .3f), Random.Range (-.3f, .3f), Random.Range (-.3f, .3f));
+				enemyColors [5] = enemyColors [4];
+				enemyColors [6] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
+				enemyColors [7] = enemyColors [6];
+			}
+		
+			foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>()) {
+				if (i == enemyColors.Length) {
+					i = 0;
+				}
+				sr.material.color = enemyColors [i];
+				i++;
+			}
+			i = 0;
+		}
 	}
 
 	public void Typecheck(int t)
