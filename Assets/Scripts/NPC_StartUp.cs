@@ -144,10 +144,5 @@ public class NPC_StartUp : MonoBehaviour
 		} else if (npcType == 3) {
 			checkIn = true;
 		}
-
-		if (npcType == 2) {
-			print (i);
-		}
-
 	}
 }
