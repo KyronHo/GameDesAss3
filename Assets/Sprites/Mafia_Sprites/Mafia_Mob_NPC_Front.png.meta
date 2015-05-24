@@ -1,0 +1,132 @@
+fileFormatVersion: 2
+guid: 0e7d2200e1ec6e844a78ea58d4536781
+timeCreated: 1432468387
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Mafia_Mob_NPC_Front_Hat
+    21300002: Mafia_Mob_NPC_Front_Head
+    21300004: Mafia_Mob_NPC_Front_Body
+    21300006: Mafia_Mob_NPC_Front_Left_Arm
+    21300008: Mafia_Mob_NPC_Front_Right_Arm
+    21300010: Mafia_Mob_NPC_Front_Right_Shoe
+    21300012: Mafia_Mob_NPC_Front_Left_Shoe
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Mafia_Mob_NPC_Front_Hat
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 451
+        width: 49
+        height: 43
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mafia_Mob_NPC_Front_Head
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 364
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mafia_Mob_NPC_Front_Body
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 296
+        width: 45
+        height: 65
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mafia_Mob_NPC_Front_Left_Arm
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 449
+        width: 33
+        height: 40
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mafia_Mob_NPC_Front_Right_Arm
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 449
+        width: 35
+        height: 40
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mafia_Mob_NPC_Front_Right_Shoe
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 384
+        width: 27
+        height: 36
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mafia_Mob_NPC_Front_Left_Shoe
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 384
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
