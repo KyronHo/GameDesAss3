@@ -8,18 +8,21 @@ public class NPC_StartUp : MonoBehaviour
 	public bool checkIn = false;
 	private int i = 0;
 	public int npcType;
-	private Color[] npcColors = new Color[10];
+	private Color[] npcColors = new Color[11];
 	private float redSkin;
 	private float blueSkin;
 	private float greenSkin;
 	private float whiteSkin;
+	public bool dead = false;
 	// Use this for initialization
 	void Start ()
 	{
 		manager = GameObject.Find ("GlobalScript").GetComponent<GlobalScript> ();
 		if (manager.level == 1) {
 			lv2NPCColor ();
-		} else {
+		} else if (manager.level == 2) {
+			lv3NPCColor();
+		}else {
 			npcColor ();
 		}
 	}
@@ -92,5 +95,54 @@ public class NPC_StartUp : MonoBehaviour
 			i++;
 		}
 		i = 0;
+	}
+
+	public void lv3NPCColor()
+	{
+		if (npcType == 0 || npcType == 3) {
+			redSkin = Random.Range (0.5f, 1f) + Random.Range (0, Random.Range (0f, .4f));
+			blueSkin = redSkin - Random.Range (.15f, .3f);
+			greenSkin = (redSkin + blueSkin) / 2 - Random.Range (0f, .3f);
+			whiteSkin = Random.Range (0f, .4f);
+			npcColors [0] = new Color (0, 0, 1);
+			npcColors [1] = new Color (whiteSkin + Random.Range (0, 0.1f), whiteSkin + Random.Range (0, 0.2f), whiteSkin + Random.Range (0f, .5f)) + new Color (0, 0, 0);
+			npcColors [2] = new Color (redSkin, blueSkin, greenSkin); 
+			npcColors [3] = npcColors [1] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
+			npcColors [4] = npcColors [1] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
+			npcColors [5] = npcColors [4];
+			npcColors [6] = npcColors [1] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
+			npcColors [7] = npcColors [6];
+			npcColors [8] = npcColors [1] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
+			npcColors [9] = npcColors [8];
+			npcColors [10] = new Color (1, 1, 1);
+		} else {
+			redSkin = Random.Range (0.5f, 1f) + Random.Range (0, Random.Range (0f, .4f));
+			blueSkin = redSkin - Random.Range (.15f, .3f);
+			greenSkin = (redSkin + blueSkin) / 2 - Random.Range (0f, .3f);
+			whiteSkin = Random.Range (0f, .2f);
+			npcColors [0] = new Color (1, 0, 0);
+			npcColors [1] = new Color (whiteSkin + Random.Range (0.2f, 0.7f), whiteSkin + Random.Range (0, 0.2f), whiteSkin + Random.Range (0f, .1f)) + new Color (0, 0, 0);
+			npcColors [2] = new Color (redSkin, blueSkin, greenSkin); 
+			npcColors [3] = npcColors [1] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
+			npcColors [4] = npcColors [1] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
+			npcColors [5] = npcColors [4];
+			npcColors [6] = npcColors [1] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
+			npcColors [7] = npcColors [6];
+			npcColors [8] = npcColors [1] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
+			npcColors [9] = npcColors [8];
+			npcColors [10] = new Color (1, 1, 1);
+		}
+
+		foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>()) {
+			sr.material.color = npcColors [i];
+			i++;
+		}
+		i = 0;
+
+		if (npcType == 1) {
+			checkIn = true;
+		} else if (npcType == 3) {
+			checkIn = true;
+		}
 	}
 }
