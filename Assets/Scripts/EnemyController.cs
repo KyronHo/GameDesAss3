@@ -228,6 +228,15 @@ public class EnemyController : MonoBehaviour
 		}
 	}
 
+	void OnTriggerEnter2D (Collider2D other)
+	{
+		if (manager.level < 2) {
+			if (other.CompareTag ("VIP")) {
+				GetComponent<AudioSource> ().Play ();
+			}
+		}
+	}
+
 	private void shootTarget(){
 		animControl.SetTrigger("Death");
 	}
