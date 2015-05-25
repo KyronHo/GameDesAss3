@@ -158,8 +158,8 @@ public class NPC_StartUp : MonoBehaviour
 
 	public void checkDeath()
 	{
-		roll = Random.Range (0, 1000f);
-		if(roll>999){
+		roll = Random.Range (0, 1500f);
+		if(roll>1499){
 		animControl.SetTrigger("Death");
 		gameObject.tag = "NPC";
 		}

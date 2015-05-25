@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour
 	private float greenSkin;
 	private float whiteSkin;
 	private int type = -1;
+	private Animator animControl;
 	// Use this for initialization
 	void Start ()
 	{
@@ -34,6 +35,7 @@ public class EnemyController : MonoBehaviour
 		} else if (level == 2) {
 			type0 = GameObject.Find ("0").GetComponent<Transform> ();
 			type1 = GameObject.Find ("1").GetComponent<Transform> ();
+			animControl = GetComponentInChildren<Animator>();
 		}
 	}
 	
@@ -63,8 +65,10 @@ public class EnemyController : MonoBehaviour
 			lv3EnemyColor();
 		}
 		timer -= Time.deltaTime;
-		if (timer <= 2.5f) {
-			MoveTowardsTarget();
+		if (timer <= 2.5f && level < 2) {
+			MoveTowardsTarget ();
+		} else if (timer <= 2.5f && level == 2) {
+			shootTarget();
 		}
 	}
 
@@ -222,6 +226,10 @@ public class EnemyController : MonoBehaviour
 			
 			transform.position += new Vector3((directionOfTravel.x * speed * Time.deltaTime) ,(directionOfTravel.y * speed * Time.deltaTime), 0);
 		}
+	}
+
+	private void shootTarget(){
+		animControl.SetTrigger("Death");
 	}
 
 }

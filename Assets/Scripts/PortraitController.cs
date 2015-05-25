@@ -5,7 +5,7 @@ public class PortraitController : MonoBehaviour
 {
 	
 	private GlobalScript manager;
-	public Color[] enemyColors = new Color[8];
+	public Color[] enemyColors = new Color[12];
 	private int i = 0;
 	private Transform type0;
 	private Transform type1;
@@ -17,13 +17,16 @@ public class PortraitController : MonoBehaviour
 		if (manager.level == 1) {
 			type0 = GameObject.Find ("p0").GetComponent<Transform> ();
 			type1 = GameObject.Find ("p1").GetComponent<Transform> ();
+		}else if (manager.level == 2) {
+			type0 = GameObject.Find ("p0").GetComponent<Transform> ();
+			type1 = GameObject.Find ("p1").GetComponent<Transform> ();
 		}
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		for (i=0; i < 8; i++) {
+		for (i=0; i < manager.enemy.enemyColors.Length; i++) {
 			enemyColors[i] = manager.enemy.enemyColors[i];
 		}
 		i = 0;
