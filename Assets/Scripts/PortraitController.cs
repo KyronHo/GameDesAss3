@@ -36,7 +36,7 @@ public class PortraitController : MonoBehaviour
 	public void EnemyColor ()
 	{		
 		foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>()) {
-			if(i== enemyColors.Length)
+			if(i == enemyColors.Length)
 			{
 				i=0;
 			}
