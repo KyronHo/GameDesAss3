@@ -3,20 +3,21 @@ using System.Collections;
 
 public class MafiaController : MonoBehaviour {
 
-	private Transform target;
+	//private Transform target;
 	public float speed;
+	public int t1;
 	// Use this for initialization
 	void Start () {
-		target = GameObject.Find ("Target_Point_1").GetComponent<Transform> ();
-		speed = 2;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		MoveTowardsTarget ();
+		if (t1 == 1) {
+			MoveTowardsTarget (GameObject.Find ("Target_Point_1").GetComponent<Transform> ());
+		}
 	}
 
-	private void MoveTowardsTarget() {
+	private void MoveTowardsTarget(Transform target) {
 		Vector3 targetPosition = target.position;
 
 		Vector3 currentPosition = transform.position;
