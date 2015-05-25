@@ -14,7 +14,7 @@ public class NPC_StartUp : MonoBehaviour
 	private float greenSkin;
 	private float whiteSkin;
 	public bool shot = false;
-	private Animator animControl;
+	private Animator animControl; // sets up animator component to take triggers
 	public float roll;
 	private float shoot;
 	// Use this for initialization
@@ -25,7 +25,7 @@ public class NPC_StartUp : MonoBehaviour
 			lv2NPCColor ();
 		} else if (manager.level == 2) {
 			lv3NPCColor();
-			animControl = GetComponent<Animator>();
+			animControl = GetComponent<Animator>(); // sets up animator component to take triggers
 			if(npcType <= 1){
 				checkDeath (1000);
 			}
@@ -166,7 +166,7 @@ public class NPC_StartUp : MonoBehaviour
 	{
 		roll = Random.Range (0, 1500f);
 		if(roll>chance){
-		animControl.SetTrigger("Death");
+			animControl.SetTrigger("Death");  // activates the trigger, changing the animation that is currently being performed
 		gameObject.tag = "NPC";
 		}
 	}
