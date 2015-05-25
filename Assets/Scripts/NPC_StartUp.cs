@@ -16,6 +16,7 @@ public class NPC_StartUp : MonoBehaviour
 	public bool shot = false;
 	private Animator animControl;
 	public float roll;
+	private float shoot;
 	// Use this for initialization
 	void Start ()
 	{
@@ -25,7 +26,7 @@ public class NPC_StartUp : MonoBehaviour
 		} else if (manager.level == 2) {
 			lv3NPCColor();
 			animControl = GetComponent<Animator>();
-			if(npcType < 2){
+			if(npcType <= 1){
 				checkDeath (1000);
 			}
 		}else {
@@ -170,8 +171,8 @@ public class NPC_StartUp : MonoBehaviour
 		}
 	}
 	public void checkShot(){
-		roll = Random.Range (0, 5f);
-		if(roll > 4 && shot == false){
+		shoot = Random.Range (0, 5f);
+		if(shoot > 4 && shot == false){
 			if(GetComponent<AudioSource> () != null){
 			GetComponent<AudioSource> ().Play ();
 			shot = true;
