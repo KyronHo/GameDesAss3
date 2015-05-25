@@ -13,7 +13,7 @@ public class NPC_StartUp : MonoBehaviour
 	private float blueSkin;
 	private float greenSkin;
 	private float whiteSkin;
-	public bool dead = false;
+	public bool shot = false;
 	private Animator animControl;
 	public float roll;
 	// Use this for initialization
@@ -44,7 +44,9 @@ public class NPC_StartUp : MonoBehaviour
 			}
 			checkIn = true;
 		}
-
+		if (manager.level == 2) {
+			checkShot();
+		}
 	}
 
 	void OnTriggerStay2D (Collider2D other)
@@ -165,6 +167,15 @@ public class NPC_StartUp : MonoBehaviour
 		if(roll>chance){
 		animControl.SetTrigger("Death");
 		gameObject.tag = "NPC";
+		}
+	}
+	public void checkShot(){
+		roll = Random.Range (0, 5f);
+		if(roll > 4 && shot == false){
+			if(GetComponent<AudioSource> () != null){
+			GetComponent<AudioSource> ().Play ();
+			shot = true;
+			}
 		}
 	}
 }
