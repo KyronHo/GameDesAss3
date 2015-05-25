@@ -19,6 +19,8 @@ public class IntroTimer : MonoBehaviour {
 			}
 			else if(level == 1){
 				Application.LoadLevel("Camelot_Level");
+			}else if (level == 2){
+				Application.LoadLevel("Sengoku_Level");
 			}
 		}
 	}
