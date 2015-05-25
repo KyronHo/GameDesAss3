@@ -48,6 +48,11 @@ public class PlayerController : MonoBehaviour
 					friendly = 3;
 					interactableOn.enabled = false;
 				}
+				else if(manager.level == 2){
+					manager.portrait.showPart (Random.Range (0, 9), manager.enemyType);
+					friendly = 3;
+					interactableOn.enabled = false;
+				}
 				else{
 					manager.portrait.showPart (Random.Range (0, 8));
 					friendly = 3;
@@ -66,7 +71,10 @@ public class PlayerController : MonoBehaviour
 				}
 				if(level == 1)
 				{
-					Application.LoadLevel("Sengoku_Level");
+					Application.LoadLevel("Sengoku_Intro");
+				}if (level == 2)
+				{
+					Application.LoadLevel("Mafia_Intro");
 				}
 			}
 		}
@@ -87,8 +95,10 @@ public class PlayerController : MonoBehaviour
 		if (other.CompareTag ("NPC")) {
 			Interact (other);
 			friendly = 2;
-		}else if (other.CompareTag ("Enemy")) {
+		}else if (other.CompareTag ("Enemy") && level !=2) {
 			Interact (other);
+			friendly = 1;
+		}else if(other.CompareTag ("Enemy") && level == 2){
 			friendly = 1;
 		}
 	}
