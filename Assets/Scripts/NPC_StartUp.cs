@@ -25,6 +25,9 @@ public class NPC_StartUp : MonoBehaviour
 		} else if (manager.level == 2) {
 			lv3NPCColor();
 			animControl = GetComponent<Animator>();
+			if(npcType < 2){
+				checkDeath (1000);
+			}
 		}else {
 			npcColor ();
 		}
@@ -47,7 +50,7 @@ public class NPC_StartUp : MonoBehaviour
 	void OnTriggerStay2D (Collider2D other)
 	{
 		if (manager.level == 2 && !other.CompareTag ("NPC") && npcType >= 3) {
-			checkDeath();
+			checkDeath(1499);
 		}
 	}
 
@@ -156,10 +159,10 @@ public class NPC_StartUp : MonoBehaviour
 		} 
 	}
 
-	public void checkDeath()
+	public void checkDeath(int chance)
 	{
 		roll = Random.Range (0, 1500f);
-		if(roll>1499){
+		if(roll>chance){
 		animControl.SetTrigger("Death");
 		gameObject.tag = "NPC";
 		}
