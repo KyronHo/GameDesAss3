@@ -8,12 +8,14 @@ public class NPC_StartUp : MonoBehaviour
 	public bool checkIn = false;
 	private int i = 0;
 	public int npcType;
-	private Color[] npcColors = new Color[11];
+	private Color[] npcColors = new Color[12];
 	private float redSkin;
 	private float blueSkin;
 	private float greenSkin;
 	private float whiteSkin;
 	public bool dead = false;
+	private Animator animControl;
+	public float roll;
 	// Use this for initialization
 	void Start ()
 	{
@@ -22,6 +24,7 @@ public class NPC_StartUp : MonoBehaviour
 			lv2NPCColor ();
 		} else if (manager.level == 2) {
 			lv3NPCColor();
+			animControl = GetComponent<Animator>();
 		}else {
 			npcColor ();
 		}
@@ -37,6 +40,14 @@ public class NPC_StartUp : MonoBehaviour
 				Destroy (transform.gameObject);
 			}
 			checkIn = true;
+		}
+
+	}
+
+	void OnTriggerStay2D (Collider2D other)
+	{
+		if (manager.level == 2 && !other.CompareTag ("NPC") && npcType >= 3) {
+			checkDeath();
 		}
 	}
 
@@ -104,32 +115,33 @@ public class NPC_StartUp : MonoBehaviour
 			blueSkin = redSkin - Random.Range (.15f, .3f);
 			greenSkin = (redSkin + blueSkin) / 2 - Random.Range (0f, .3f);
 			whiteSkin = Random.Range (0f, .4f);
-			npcColors [0] = new Color (0, 0, 1);
-			npcColors [1] = new Color (whiteSkin + Random.Range (0, 0.1f), whiteSkin + Random.Range (0, 0.2f), whiteSkin + Random.Range (0f, .5f)) + new Color (0, 0, 0);
-			npcColors [2] = new Color (redSkin, blueSkin, greenSkin); 
-			npcColors [3] = npcColors [1] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
-			npcColors [4] = npcColors [1] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
-			npcColors [5] = npcColors [4];
-			npcColors [6] = npcColors [1] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
-			npcColors [7] = npcColors [6];
-			npcColors [8] = npcColors [1] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
-			npcColors [9] = npcColors [8];
+			npcColors [0] = new Color (whiteSkin + Random.Range (0, 0.1f), whiteSkin + Random.Range (0, 0.2f), whiteSkin + Random.Range (0f, .5f)) + new Color (0, 0, 0);
+			npcColors [1] = new Color (redSkin, blueSkin, greenSkin); 
+			npcColors [2] = npcColors [0] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
+			npcColors [3] = npcColors [0] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
+			npcColors [4] = npcColors [3];
+			npcColors [5] = npcColors [0] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
+			npcColors [6] = npcColors [5];
+			npcColors [7] = npcColors [0] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
+			npcColors [8] = npcColors [7];
+			npcColors [9] = new Color (1, 1, 1);
 			npcColors [10] = new Color (1, 1, 1);
+			npcColors [11] = new Color (1, 1, 1);
 		} else {
 			redSkin = Random.Range (0.5f, 1f) + Random.Range (0, Random.Range (0f, .4f));
 			blueSkin = redSkin - Random.Range (.15f, .3f);
 			greenSkin = (redSkin + blueSkin) / 2 - Random.Range (0f, .3f);
 			whiteSkin = Random.Range (0f, .2f);
-			npcColors [0] = new Color (1, 0, 0);
-			npcColors [1] = new Color (whiteSkin + Random.Range (0.2f, 0.7f), whiteSkin + Random.Range (0, 0.2f), whiteSkin + Random.Range (0f, .1f)) + new Color (0, 0, 0);
-			npcColors [2] = new Color (redSkin, blueSkin, greenSkin); 
-			npcColors [3] = npcColors [1] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
-			npcColors [4] = npcColors [1] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
-			npcColors [5] = npcColors [4];
-			npcColors [6] = npcColors [1] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
-			npcColors [7] = npcColors [6];
-			npcColors [8] = npcColors [1] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
-			npcColors [9] = npcColors [8];
+			npcColors [0] = new Color (whiteSkin + Random.Range (0.2f, 0.7f), whiteSkin + Random.Range (0, 0.2f), whiteSkin + Random.Range (0f, .1f)) + new Color (0, 0, 0);
+			npcColors [1] = new Color (redSkin, blueSkin, greenSkin); 
+			npcColors [2] = npcColors [0] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
+			npcColors [3] = npcColors [0] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
+			npcColors [4] = npcColors [3];
+			npcColors [5] = npcColors [0] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
+			npcColors [6] = npcColors [5];
+			npcColors [7] = npcColors [0] + new Color (Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f), Random.Range (-0.05f, 0.05f));
+			npcColors [8] = npcColors [7];
+			npcColors [9] = new Color (1, 1, 1);
 			npcColors [10] = new Color (1, 1, 1);
 		}
 
@@ -139,10 +151,17 @@ public class NPC_StartUp : MonoBehaviour
 		}
 		i = 0;
 
-		if (npcType == 1) {
+		if (npcType >= 3) {
 			checkIn = true;
-		} else if (npcType == 3) {
-			checkIn = true;
+		} 
+	}
+
+	public void checkDeath()
+	{
+		roll = Random.Range (0, 1000f);
+		if(roll>999){
+		animControl.SetTrigger("Death");
+		gameObject.tag = "NPC";
 		}
 	}
 }
