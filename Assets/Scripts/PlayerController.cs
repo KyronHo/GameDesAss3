@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
 		}
 		if (Input.GetKeyDown (KeyCode.E)) {
 			if (friendly == 2) {
+				GetComponent<AudioSource>().Play();
 				if (manager.level == 1){
 				manager.portrait.showPart (Random.Range (0, 8), manager.enemyType);
 					friendly = 3;
@@ -65,6 +66,7 @@ public class PlayerController : MonoBehaviour
 		if (Input.GetKeyDown (KeyCode.X)) {
 			if (friendly == 1)
 			{
+				manager.GetComponent<AudioSource>().Play();
 				if(level == 0)
 				{
 					Application.LoadLevel("Camelot_Intro");
