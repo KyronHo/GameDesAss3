@@ -72,8 +72,8 @@ public class PortraitController : MonoBehaviour
 					if(sr.enabled == false){
 						sr.enabled = true;
 						partCount++;
-					}else if(partCount < GetComponentsInChildren<SpriteRenderer>().Length){
-						showPart(Random.Range (0, GetComponentsInChildren<SpriteRenderer>().Length));
+					}else if(partCount < type0.GetComponentsInChildren<SpriteRenderer>().Length){
+						showPart(Random.Range (0, type0.GetComponentsInChildren<SpriteRenderer>().Length), 0);
 					}
 				}
 				i++;
@@ -85,8 +85,8 @@ public class PortraitController : MonoBehaviour
 					if(sr.enabled == false){
 						sr.enabled = true;
 						partCount++;
-					}else if(partCount < GetComponentsInChildren<SpriteRenderer>().Length){
-						showPart(Random.Range (0, GetComponentsInChildren<SpriteRenderer>().Length));
+					}else if(partCount < type1.GetComponentsInChildren<SpriteRenderer>().Length){
+						showPart(Random.Range (0, type1.GetComponentsInChildren<SpriteRenderer>().Length), 1);
 					}
 				}
 				i++;
