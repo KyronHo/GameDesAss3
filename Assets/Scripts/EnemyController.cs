@@ -20,6 +20,7 @@ public class EnemyController : MonoBehaviour
 	private float whiteSkin;
 	private int type = -1;
 	private Animator animControl;
+	private bool shooting;
 	// Use this for initialization
 	void Start ()
 	{
@@ -67,8 +68,13 @@ public class EnemyController : MonoBehaviour
 		timer -= Time.deltaTime;
 		if (timer <= 2.5f && level < 2) {
 			MoveTowardsTarget ();
-		} else if (timer <= 2.5f && level == 2) {
-			shootTarget();
+		} else if (level == 2) {
+			if(timer <= 1f && shooting == false){
+				shootTarget();
+				shooting = true;
+			}else if(timer < 0f && !GetComponent<AudioSource> ().isPlaying && timer > -1f){
+				GetComponent<AudioSource> ().Play ();
+			}
 		}
 	}
 
