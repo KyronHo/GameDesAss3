@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
 		if (Input.GetKeyDown (KeyCode.E)) {
 			if (friendly == 2) {
 				GetComponent<AudioSource>().Play();
+				GameObject.Find ("Wanted").GetComponent<Animator> ().SetTrigger ("Vibrate");
 				if (manager.level == 1){
 				manager.portrait.showPart (Random.Range (0, 8), manager.enemyType);
 					friendly = 3;

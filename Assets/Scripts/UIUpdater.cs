@@ -7,7 +7,7 @@ public class UIUpdater : MonoBehaviour {
 	// Use this for initialization
 	private Text timeLeft;
 	public float timer = 0.0f;
-	private float timerMax = 20.0f;
+	private float timerMax = 20.00f;
 	public int level;
 //	private string vip;
 	public GameObject loseScreen;
@@ -27,16 +27,17 @@ public class UIUpdater : MonoBehaviour {
 		if (timer <= -1) {
 			loseScreen.SetActive (true);
 			timer = -1;
-
 		}
-
-//		if (level == 0) {
-//			vip = "Caesar";
-//		} else if (level == 1) {
-//			vip = "Arthur";
-//		} else if (level == 2) {
-//			vip = "Hideyoshi";
-//		}
-		timeLeft.text = timer.ToString("F2");//"Time until "+ vip + "'s death: " + timer.ToString("F2") + " Seconds";
+		if (timer <= 5 && timer > 0) {
+			timeLeft.color = new Color (1, timer / 5, 0);
+			timeLeft.fontSize = 20;
+			timeLeft.text = timer.ToString ("F0");
+		} else if(timer < 0){
+			timeLeft.fontSize = 14;
+			timeLeft.text = "Dead";
+		}
+		else{
+			timeLeft.text = timer.ToString ("F2");
+		}
 	}
 }
