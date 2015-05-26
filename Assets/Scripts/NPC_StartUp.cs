@@ -24,12 +24,16 @@ public class NPC_StartUp : MonoBehaviour
 		if (manager.level == 1) {
 			lv2NPCColor ();
 		} else if (manager.level == 2) {
-			lv3NPCColor();
-			animControl = GetComponent<Animator>(); // sets up animator component to take triggers
-			if(npcType <= 1){
+			lv3NPCColor ();
+			animControl = GetComponent<Animator> (); // sets up animator component to take triggers
+			if (npcType <= 1) {
 				checkDeath (1000);
 			}
-		}else {
+		} else if (manager.level == 3) 
+		{
+			lv4NPCColor();
+		}else
+		{
 			npcColor ();
 		}
 	}
@@ -160,6 +164,30 @@ public class NPC_StartUp : MonoBehaviour
 		if (npcType >= 3) {
 			checkIn = true;
 		} 
+	}
+
+	public void lv4NPCColor()
+	{
+		redSkin = Random.Range (0.5f, 1f) + Random.Range(0, Random.Range (0f, .4f));
+		blueSkin = redSkin - Random.Range(.15f, .3f);
+		greenSkin = (redSkin + blueSkin)/2 - Random.Range(0f, .3f);
+		whiteSkin = Random.Range (0f, .4f);
+		npcColors [0] = new Color (0, 0, 0);
+		npcColors [1] = new Color (redSkin + whiteSkin, blueSkin + whiteSkin, greenSkin + whiteSkin);
+		npcColors [2] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
+		npcColors [3] = npcColors [1];
+		npcColors [4] = npcColors [1];
+		npcColors [5] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
+		npcColors [6] = npcColors [5];
+		npcColors [7] = new Color (.5f, .3f, .05f);
+		npcColors [8] = new Color (0, 0, 0);
+		npcColors [9] = new Color (0, 0, 0);
+		
+		foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>()) {
+			sr.material.color = npcColors [i];
+			i++;
+		}
+		i = 0;
 	}
 
 	public void checkDeath(int chance)
