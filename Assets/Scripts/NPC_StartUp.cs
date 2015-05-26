@@ -41,7 +41,18 @@ public class NPC_StartUp : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (checkIn == false) {
+		if (manager.level == 3) {
+			if (checkIn == false && manager.EnemyCheck()) {
+				manager.SetEnemyType(npcType);
+				manager.SetEnemyPos (transform.position);
+				foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>()) {
+					sr.enabled = false;
+				}
+				GetComponent<CircleCollider2D>().enabled = false;
+			}
+			checkIn = true;
+		}
+		else if (checkIn == false) {
 			if (manager.EnemyCheck ()) {
 				manager.SetEnemyType(npcType);
 				manager.SetEnemyPos (transform.position);
@@ -207,4 +218,6 @@ public class NPC_StartUp : MonoBehaviour
 			}
 		}
 	}
+
+
 }
