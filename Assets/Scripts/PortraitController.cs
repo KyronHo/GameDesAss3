@@ -9,6 +9,7 @@ public class PortraitController : MonoBehaviour
 	private int i = 0;
 	private Transform type0;
 	private Transform type1;
+	private int partCount;
 	// Use this for initialization
 	void Start ()
 	{
@@ -21,6 +22,7 @@ public class PortraitController : MonoBehaviour
 			type0 = GameObject.Find ("p0").GetComponent<Transform> ();
 			type1 = GameObject.Find ("p1").GetComponent<Transform> ();
 		}
+		partCount = 0;
 	}
 	
 	// Update is called once per frame
@@ -50,7 +52,12 @@ public class PortraitController : MonoBehaviour
 		i = 0;
 		foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>()) {
 			if(i == part){
-			sr.enabled = true;
+				if(sr.enabled == false){
+					sr.enabled = true;
+					partCount++;
+				}else if(partCount < GetComponentsInChildren<SpriteRenderer>().Length){
+					showPart(Random.Range (0, GetComponentsInChildren<SpriteRenderer>().Length));
+				}
 			}
 			i++;
 		}
@@ -61,16 +68,26 @@ public class PortraitController : MonoBehaviour
 		i = 0;
 		if (type == 0) {
 			foreach (SpriteRenderer sr in type0.GetComponentsInChildren<SpriteRenderer>()) {
-				if (i == part) {
-					sr.enabled = true;
+				if(i == part){
+					if(sr.enabled == false){
+						sr.enabled = true;
+						partCount++;
+					}else if(partCount < GetComponentsInChildren<SpriteRenderer>().Length){
+						showPart(Random.Range (0, GetComponentsInChildren<SpriteRenderer>().Length));
+					}
 				}
 				i++;
 			}
 			i = 0;
 		}else if (type == 1) {
 			foreach (SpriteRenderer sr in type1.GetComponentsInChildren<SpriteRenderer>()) {
-				if (i == part) {
-					sr.enabled = true;
+				if(i == part){
+					if(sr.enabled == false){
+						sr.enabled = true;
+						partCount++;
+					}else if(partCount < GetComponentsInChildren<SpriteRenderer>().Length){
+						showPart(Random.Range (0, GetComponentsInChildren<SpriteRenderer>().Length));
+					}
 				}
 				i++;
 			}
