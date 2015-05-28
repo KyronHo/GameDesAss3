@@ -20,5 +20,8 @@ public class HintFade : MonoBehaviour {
 				temp.a -= .01f;
 				gameObject.GetComponent<Image>().color = temp;}
 		}
+		if (temp.a <= 0f) {
+			Destroy (transform.gameObject);
+		}
 	}
 }
