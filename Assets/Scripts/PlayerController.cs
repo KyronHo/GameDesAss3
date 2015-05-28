@@ -10,9 +10,10 @@ public class PlayerController : MonoBehaviour
 	private GlobalScript manager;
 	private Transform interactable;
 	private SpriteRenderer interactableOn;
-	public float angle;
+	//public float angle;
 	public int friendly = 0;
 	public int level;
+	public bool tPortrait = false;
 
 	// Use this for initialization
 	void Start ()
@@ -56,7 +57,12 @@ public class PlayerController : MonoBehaviour
 					interactableOn.enabled = false;
 				}
 				else if(level == -1){
-					GameObject.Find ("tEnemyPortrait1").GetComponent<SpriteRenderer> ().enabled = true;
+					if(!tPortrait){
+						GameObject.Find ("tEnemyPortrait1").GetComponent<SpriteRenderer> ().enabled = true;
+						tPortrait = true;
+					}else{
+						GameObject.Find ("tEnemyPortrait2").GetComponent<SpriteRenderer> ().enabled = true;
+					}
 					friendly = 3;
 					interactableOn.enabled = false;
 				}
