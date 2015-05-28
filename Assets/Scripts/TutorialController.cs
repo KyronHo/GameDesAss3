@@ -30,7 +30,7 @@ public class TutorialController : MonoBehaviour {
 				GameObject.Find ("tNPC3").GetComponent<Transform>().position = new Vector3(1,1,0);
 			}			
 			if(timer < 0f){
-				if (stage == 3){
+				if (stage == 3 || stage == 4){
 					manager.enemy.placed = false;
 					Proceed();
 				}
@@ -38,18 +38,19 @@ public class TutorialController : MonoBehaviour {
 		}
 		if (GameObject.Find ("tEnemyPortrait1").GetComponent<SpriteRenderer> ().enabled == true && stage == 4) {
 			manager.enemy.placed = false;
-			ttext.text = "When you think you've worked out who is the one you're looking for, press X when close to them";
-			stage = 7;
-		}
-		if (GameObject.Find ("tEnemy").GetComponent<Transform> ().position.z == 1 && stage == 5) {
-			manager.enemy.placed = true;
+			//ttext.text = "When you think you've worked out who is the one you're looking for, press X when close to them";
 			stage = 5;
 			Proceed ();
 		}
-		if (stage == 7) {
+		if (GameObject.Find ("tEnemy").GetComponent<Transform> ().position.z == 1 && stage == 6) {
+			manager.enemy.placed = true;
+			stage = 6;
+			Proceed ();
+		}
+		if (stage == 8) {
 			manager.enemy.placed = true;
 			if (GameObject.Find ("tEnemy").GetComponent<Transform> ().position.z == 1){
-				stage = 5;
+				stage = 6;
 			}
 		}
 	}
@@ -64,15 +65,19 @@ public class TutorialController : MonoBehaviour {
 		} else if (stage == 3) {
 			stage++;
 			ttext.text += " If you press E to talk to these individuals when near them, they will be able to show you part of those you are looking for.";
-		} else if (stage == 4) {
+
+		} else if(stage == 4){
 			GameObject.Find ("tEnemyPortrait1").GetComponent<SpriteRenderer> ().enabled = true;
-			manager.enemy.placed = false;
+			ttext.text = "See? the part they told you about appeared at the top right, also, see that box next to where the part appeared? that shows the time left for you to complete your mission, right now it's infinite, but if it reaches 0 you will have failed!";
+			stage = 5;
+		}else if (stage == 5) {
+			manager.enemy.placed = false;GameObject.Find ("ButtonText").GetComponent<Text> ().text = "Find them to continue";
 			ttext.text = "When you think you've worked out who is the one you're looking for, press X when close to them";
-		} else if (stage == 5) {
+		} else if (stage == 6) {
 			GameObject.Find ("ButtonText").GetComponent<Text> ().text = "Travel through time!";
 			ttext.text = "You've passed this test! Congradulations!, you are now authorised to track down those who would change time!";
-			stage = 6;
-		} else if (stage == 6) {
+			stage = 7;
+		} else if (stage == 7) {
 			Application.LoadLevel ("Roman_Intro");
 		}
 		//ttext.text = "poop";

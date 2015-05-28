@@ -36,11 +36,13 @@ public class UIUpdater : MonoBehaviour {
 			timeLeft.color = new Color (1, timer / 5, 0);
 			timeLeft.fontSize = 20;
 			timeLeft.text = timer.ToString ("F0");
-		} else if(timer < 0){
+		} else if (timer < 0) {
 			timeLeft.fontSize = 14;
 			timeLeft.text = "Dead";
-		}
-		else{
+		} else if (level == -1) {
+			timeLeft.text = "∞";
+			timeLeft.fontSize = 30;
+		} else{
 			timeLeft.text = timer.ToString ("F2");
 		}
 	}
