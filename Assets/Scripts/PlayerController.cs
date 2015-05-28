@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 	//public float angle;
 	public int friendly = 0;
 	public int level;
-	public bool tPortrait = false;
+	public int tPortrait = 0;
 
 	// Use this for initialization
 	void Start ()
@@ -57,11 +57,23 @@ public class PlayerController : MonoBehaviour
 					interactableOn.enabled = false;
 				}
 				else if(level == -1){
-					if(!tPortrait){
+					if(tPortrait == 0){
 						GameObject.Find ("tEnemyPortrait1").GetComponent<SpriteRenderer> ().enabled = true;
-						tPortrait = true;
-					}else{
+						tPortrait++;
+					}else if (tPortrait == 1){
 						GameObject.Find ("tEnemyPortrait2").GetComponent<SpriteRenderer> ().enabled = true;
+						tPortrait++;
+					}else if (tPortrait == 2){
+						GameObject.Find ("tEnemyPortrait3").GetComponent<SpriteRenderer> ().enabled = true;
+						tPortrait++;
+					}else if (tPortrait == 3){
+						GameObject.Find ("tEnemyPortrait4").GetComponent<SpriteRenderer> ().enabled = true;
+						tPortrait++;
+					}else if (tPortrait == 4){
+						GameObject.Find ("tEnemyPortrait5").GetComponent<SpriteRenderer> ().enabled = true;
+						tPortrait++;
+					}else if (tPortrait == 5){
+						GameObject.Find ("tEnemyPortrait6").GetComponent<SpriteRenderer> ().enabled = true;
 					}
 					friendly = 3;
 					interactableOn.enabled = false;

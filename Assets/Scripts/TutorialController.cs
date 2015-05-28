@@ -6,7 +6,6 @@ public class TutorialController : MonoBehaviour {
 	private Text ttext;
 	public float timer  = 5f;
 	private GlobalScript manager;
-	private bool enemyPlaced = false;
 
 
 	// Use this for initialization
@@ -23,13 +22,13 @@ public class TutorialController : MonoBehaviour {
 		if(stage >= 3){
 			timer -= Time.deltaTime;
 			if(timer < 3f){
-				GameObject.Find ("tNPC").GetComponent<Transform>().position = new Vector3(2,1,0);
+				GameObject.Find ("tNPC").GetComponent<Transform>().position = new Vector3(3.48f,.66f,0);
 			}
 			if(timer < 2f){
-				GameObject.Find ("tNPC2").GetComponent<Transform>().position = new Vector3(1,2,0);
+				GameObject.Find ("tNPC2").GetComponent<Transform>().position = new Vector3(.66f,1.75f,0);
 			}			
 			if(timer < 1f){
-				GameObject.Find ("tNPC3").GetComponent<Transform>().position = new Vector3(1,1,0);
+				GameObject.Find ("tNPC3").GetComponent<Transform>().position = new Vector3(-1.56f,-.41f,0);
 			}			
 			if(timer < 0f){
 				if (stage == 3 || stage == 4 || stage == 5){
