@@ -39,6 +39,7 @@ public class EnemyController : MonoBehaviour
 			animControl = GetComponentInChildren<Animator> ();
 		} else if (level == 3) {
 			lv4EnemyColor();
+			animControl = GetComponent<Animator> ();
 		}
 	}
 	
@@ -73,10 +74,17 @@ public class EnemyController : MonoBehaviour
 		if (timer <= 2.5f && level < 2 && level != -1) {
 			MoveTowardsTarget ();
 		} else if (level == 2) {
-			if(timer <= 1f && shooting == false){
-				shootTarget();
+			if (timer <= 1f && shooting == false) {
+				shootTarget ();
 				shooting = true;
-			}else if(timer < 0f && !GetComponent<AudioSource> ().isPlaying && timer > -1f){
+			} else if (timer < 0f && !GetComponent<AudioSource> ().isPlaying && timer > -1f) {
+				GetComponent<AudioSource> ().Play ();
+			}
+		} else if (level == 3) {
+			if (timer <= 2f && shooting == false) {
+				shootTarget ();
+				shooting = true;
+			} else if (timer < 1f && !GetComponent<AudioSource> ().isPlaying && timer > -1f) {
 				GetComponent<AudioSource> ().Play ();
 			}
 		}
@@ -272,7 +280,7 @@ public class EnemyController : MonoBehaviour
 	}
 
 	private void shootTarget(){
-		animControl.SetTrigger("Death");
+		animControl.SetTrigger("Killing_VIP");
 	}
 
 }
