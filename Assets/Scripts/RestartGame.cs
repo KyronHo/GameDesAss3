@@ -18,6 +18,8 @@ public class RestartGame : MonoBehaviour {
 			Application.LoadLevel ("Camelot_Level");
 		} else if (level == 3) {
 			Application.LoadLevel ("Sengoku_Level");
+		} else if (level == 4) {
+			Application.LoadLevel ("Mafia_Level");
 		}
 	}
 }

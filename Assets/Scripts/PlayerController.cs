@@ -84,6 +84,8 @@ public class PlayerController : MonoBehaviour
 					interactableOn.enabled = false;
 				}
 			}else{
+				GetComponent<AudioSource>().Play();
+				GameObject.Find ("Wanted").GetComponent<Animator> ().SetTrigger ("Vibrate");
 				interactableOn.enabled = false;
 			}
 		}
@@ -98,12 +100,15 @@ public class PlayerController : MonoBehaviour
 				if(level == 1)
 				{
 					Application.LoadLevel("Sengoku_Intro");
-				}if (level == 2)
+				}
+				if (level == 2)
 				{
 					Application.LoadLevel("Mafia_Intro");
-				}if(level == 3){
+				}
+				if(level == 3){
 					Application.LoadLevel("Intro");
-				} if(level == -1){
+				}
+				if(level == -1){
 					GameObject.Find ("tEnemy").GetComponent<Transform>().position = new Vector3(-200,-200,1);
 					interactableOn.enabled = false;
 					friendly = 3;
