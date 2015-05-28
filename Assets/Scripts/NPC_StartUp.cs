@@ -17,6 +17,7 @@ public class NPC_StartUp : MonoBehaviour
 	private Animator animControl; // sets up animator component to take triggers
 	public float roll;
 	private float shoot;
+	public bool enemy;
 	// Use this for initialization
 	void Start ()
 	{
@@ -42,15 +43,20 @@ public class NPC_StartUp : MonoBehaviour
 	void Update ()
 	{
 		if (manager.level == 3) {
-			if (checkIn == false && manager.EnemyCheck()) {
+			if(checkIn == false){
+				enemy = manager.EnemyCheck();
+			if (enemy) {
 				manager.SetEnemyType(npcType);
-				manager.SetEnemyPos (transform.position);
 				foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>()) {
 					sr.enabled = false;
 				}
 				GetComponent<CircleCollider2D>().enabled = false;
+				}
 			}
 			checkIn = true;
+			if(enemy){
+				manager.SetEnemyPos (transform.position);
+			}
 		}
 		else if (checkIn == false) {
 			if (manager.EnemyCheck ()) {

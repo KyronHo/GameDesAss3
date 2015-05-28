@@ -78,6 +78,8 @@ public class PlayerController : MonoBehaviour
 				}if (level == 2)
 				{
 					Application.LoadLevel("Mafia_Intro");
+				}if(level == 3){
+					Application.LoadLevel("Intro");
 				}
 			}
 		}

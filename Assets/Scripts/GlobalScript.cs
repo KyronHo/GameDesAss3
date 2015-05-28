@@ -22,6 +22,8 @@ public class GlobalScript : MonoBehaviour
 			seed = Random.Range (0, 12); //no. is no.of npcs
 		} else if (level == 2) {
 			seed = Random.Range (0, 8);
+		} else if (level == 3) {
+			seed = Random.Range (0,9);
 		}
 	}
 	

@@ -36,7 +36,9 @@ public class EnemyController : MonoBehaviour
 		} else if (level == 2) {
 			type0 = GameObject.Find ("0").GetComponent<Transform> ();
 			type1 = GameObject.Find ("1").GetComponent<Transform> ();
-			animControl = GetComponentInChildren<Animator>();
+			animControl = GetComponentInChildren<Animator> ();
+		} else if (level == 3) {
+			lv4EnemyColor();
 		}
 	}
 	
@@ -64,6 +66,8 @@ public class EnemyController : MonoBehaviour
 		}else if (level == 2){
 			Typecheck (manager.enemyType);
 			lv3EnemyColor();
+		}else if(level == 3){
+			transform.position = manager.enemyPos;
 		}
 		timer -= Time.deltaTime;
 		if (timer <= 2.5f && level < 2) {
@@ -195,6 +199,30 @@ public class EnemyController : MonoBehaviour
 			}
 			i = 0;
 		}
+	}
+
+	public void lv4EnemyColor()
+	{
+		redSkin = Random.Range (0.5f, 1f) + Random.Range(0, Random.Range (0f, .4f));
+		blueSkin = redSkin - Random.Range(.15f, .3f);
+		greenSkin = (redSkin + blueSkin)/2 - Random.Range(0f, .3f);
+		whiteSkin = Random.Range (0f, .4f);
+		enemyColors [0] = new Color (0, 0, 0);
+		enemyColors [1] = new Color (redSkin + whiteSkin, blueSkin + whiteSkin, greenSkin + whiteSkin);
+		enemyColors [2] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
+		enemyColors [3] = enemyColors [1];
+		enemyColors [4] = enemyColors [1];
+		enemyColors [5] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
+		enemyColors [6] = enemyColors [5];
+		enemyColors [7] = new Color (.5f, .3f, .05f);
+		enemyColors [8] = new Color (0, 0, 0);
+		enemyColors [9] = new Color (0, 0, 0);
+		
+		foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>()) {
+			sr.material.color = enemyColors [i];
+			i++;
+		}
+		i = 0;
 	}
 
 	public void Typecheck(int t)
