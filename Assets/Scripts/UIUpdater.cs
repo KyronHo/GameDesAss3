@@ -24,6 +24,10 @@ public class UIUpdater : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer -= Time.deltaTime;
+		if (level == -1) {
+			timer = timerMax;
+		}
+
 		if (timer <= -1) {
 			loseScreen.SetActive (true);
 			timer = -1;

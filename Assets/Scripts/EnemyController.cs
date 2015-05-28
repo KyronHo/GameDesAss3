@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
 	private int i = 0;
 	public float speed;
 	private Transform target;
-	private bool placed = false;
+	public bool placed = false;
 	private float timer = 20;
 	private Transform type0;
 	private Transform type1;
@@ -70,7 +70,7 @@ public class EnemyController : MonoBehaviour
 			transform.position = manager.enemyPos;
 		}
 		timer -= Time.deltaTime;
-		if (timer <= 2.5f && level < 2) {
+		if (timer <= 2.5f && level < 2 && level != -1) {
 			MoveTowardsTarget ();
 		} else if (level == 2) {
 			if(timer <= 1f && shooting == false){

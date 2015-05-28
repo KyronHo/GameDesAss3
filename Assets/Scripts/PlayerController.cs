@@ -55,6 +55,11 @@ public class PlayerController : MonoBehaviour
 					friendly = 3;
 					interactableOn.enabled = false;
 				}
+				else if(level == -1){
+					GameObject.Find ("tEnemyPortrait1").GetComponent<SpriteRenderer> ().enabled = true;
+					friendly = 3;
+					interactableOn.enabled = false;
+				}
 				else{
 					manager.portrait.showPart (Random.Range (0, 8));
 					friendly = 3;
@@ -80,10 +85,14 @@ public class PlayerController : MonoBehaviour
 					Application.LoadLevel("Mafia_Intro");
 				}if(level == 3){
 					Application.LoadLevel("Intro");
+				} if(level == -1){
+					GameObject.Find ("tEnemy").GetComponent<Transform>().position = new Vector3(-200,-200,1);
+					interactableOn.enabled = false;
+					friendly = 3;
 				}
 			}
 		}
-		if (manager.ui.timer <= 0) {
+		if (manager.ui.timer <= 0 && level != -1) {
 			this.enabled = false;
 		}
 		EnforceBounds ();
