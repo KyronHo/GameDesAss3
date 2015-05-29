@@ -66,7 +66,7 @@ public class TutorialController : MonoBehaviour {
 			ttext.text = "In the course of your travels, you will find others who will tell you about those who wish to alter history.";
 		} else if (stage == 3) {
 			stage++;
-			ttext.text += " If you press E to talk to these individuals when near them, they will be able to show you part of those you are looking for.";
+			ttext.text = " If you press E to talk to these individuals when near them, they will be able to show you part of those you are looking for.";
 
 		} else if(stage == 4){
 			ttext.text = "The part they told you about will appear at the top right, also, see that box with the '∞' symbol? that shows the time left for you to complete your mission, right now it's infinite, but if it reaches 0 you will have failed!";
