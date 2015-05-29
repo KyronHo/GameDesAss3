@@ -23,6 +23,8 @@ public class IntroTimer : MonoBehaviour {
 				Application.LoadLevel("Sengoku_Level");
 			}else if (level == 3){
 				Application.LoadLevel("Mafia_Level");
+			}else if(level == -1){
+				Application.LoadLevel ("Intro");
 			}
 		}
 	}
