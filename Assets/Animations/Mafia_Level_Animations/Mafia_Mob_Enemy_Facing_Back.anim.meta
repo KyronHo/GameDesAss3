@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream:Assets/Sprites/Hints/Thumbs.db.meta
-guid: 90661fe47647d5641822ff3cde5a42e8
-timeCreated: 1432899466
-=======
-guid: eeb71301a2b244fdcb6795259b28bdd4
-timeCreated: 1432898660
->>>>>>> Stashed changes:Assets/Animations/Mafia_Level_Animations/Mafia_Mob_Enemy_Facing_Back.anim.meta
-licenseType: Free
+guid: ec35149d33ef6824fbdc5e7016a8d98e
 NativeFormatImporter:
   userData: 
   assetBundleName: 

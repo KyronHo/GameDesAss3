@@ -21,6 +21,7 @@ public class EnemyController : MonoBehaviour
 	private int type = -1;
 	private Animator animControl;
 	private bool shooting;
+	private Vector3 prevloc;
 	// Use this for initialization
 	void Start ()
 	{
@@ -81,12 +82,16 @@ public class EnemyController : MonoBehaviour
 				GetComponent<AudioSource> ().Play ();
 			}
 		} else if (level == 3) {
+			if(prevloc == GetComponent<Transform>().position){
+				animControl.SetTrigger("FaceCamera");
+			}
 			if (timer <= 2f && shooting == false) {
 				shootTarget ();
 				shooting = true;
 			} else if (timer < 1f && !GetComponent<AudioSource> ().isPlaying && timer > -1f) {
 				GetComponent<AudioSource> ().Play ();
 			}
+			prevloc = GetComponent<Transform>().position;
 		}
 	}
 

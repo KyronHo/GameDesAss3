@@ -125,6 +125,9 @@ public class PlayerController : MonoBehaviour
 		if (interactable.position == (other.transform.position + new Vector3 (0.4f, 0.8f, 0))) {
 			interacted ();
 		}
+		if (level == 3) {
+			interacted();
+		}
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
