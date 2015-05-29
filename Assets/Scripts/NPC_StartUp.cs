@@ -170,6 +170,7 @@ public class NPC_StartUp : MonoBehaviour
 			npcColors [8] = npcColors [7];
 			npcColors [9] = new Color (1, 1, 1);
 			npcColors [10] = new Color (1, 1, 1);
+			npcColors [11] = new Color (1, 1, 1);
 		}
 
 		foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>()) {

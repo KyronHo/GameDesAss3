@@ -223,8 +223,8 @@ public class EnemyController : MonoBehaviour
 		enemyColors [5] = new Color (Random.Range (0f, 1f), Random.Range (0f, 1f), Random.Range (0f, 1f));
 		enemyColors [6] = enemyColors [5];
 		enemyColors [7] = new Color (.5f, .3f, .05f);
-		enemyColors [8] = new Color (0, 0, 0);
-		enemyColors [9] = new Color (0, 0, 0);
+		enemyColors [8] = new Color (1, 1, 1);
+		enemyColors [9] = new Color (1, 1, 1);
 		
 		foreach (SpriteRenderer sr in GetComponentsInChildren<SpriteRenderer>()) {
 			sr.material.color = enemyColors [i];
