@@ -41,7 +41,7 @@ public class UIUpdater : MonoBehaviour {
 			timeLeft.text = "Dead";
 		} else if (level == -1) {
 			timeLeft.text = "∞";
-			timeLeft.fontSize = 30;
+			timeLeft.fontSize = 35;
 		} else{
 			timeLeft.text = timer.ToString ("F2");
 		}
