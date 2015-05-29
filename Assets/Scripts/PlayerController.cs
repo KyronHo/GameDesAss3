@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
 					Application.LoadLevel("Mafia_Intro");
 				}
 				if(level == 3){
-					Application.LoadLevel("Intro");
+					Application.LoadLevel("WinScene");
 				}
 				if(level == -1){
 					GameObject.Find ("tEnemy").GetComponent<Transform>().position = new Vector3(-200,-200,1);
