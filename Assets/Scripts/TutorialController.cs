@@ -70,6 +70,7 @@ public class TutorialController : MonoBehaviour {
 
 		} else if(stage == 4){
 			ttext.text = "The part they told you about will appear at the top right, also, see that box with the '∞' symbol? that shows the time left for you to complete your mission, right now it's infinite, but if it reaches 0 you will have failed!";
+			GameObject.Find ("arrow").GetComponent<SpriteRenderer>().enabled = true;
 			stage = 5;
 		}else if (stage == 5) {
 			if(timer < 0){
