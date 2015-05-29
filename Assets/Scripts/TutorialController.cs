@@ -23,16 +23,20 @@ public class TutorialController : MonoBehaviour {
 			timer -= Time.deltaTime;
 			if(timer < 3f){
 				GameObject.Find ("tNPC").GetComponent<Transform>().position = new Vector3(3.48f,.66f,0);
+				GameObject.Find ("tNPC").GetComponent<Animator>().enabled = true;
 			}
 			if(timer < 2f){
 				GameObject.Find ("tNPC2").GetComponent<Transform>().position = new Vector3(.66f,1.75f,0);
+				GameObject.Find ("tNPC2").GetComponent<Animator>().enabled = true;
 			}			
 			if(timer < 1f){
 				GameObject.Find ("tNPC3").GetComponent<Transform>().position = new Vector3(-1.56f,-.41f,0);
+				GameObject.Find ("tNPC3").GetComponent<Animator>().enabled = true;
 			}			
 			if(timer < 0f){
 				if (stage == 3 || stage == 4 || stage == 5){
 					manager.enemy.placed = false;
+					GameObject.Find ("tEnemy").GetComponent<Animator>().enabled = true;
 				}
 			}
 		}
@@ -70,6 +74,7 @@ public class TutorialController : MonoBehaviour {
 		}else if (stage == 5) {
 			if(timer < 0){
 				manager.enemy.placed = false;
+				GameObject.Find ("tEnemy").GetComponent<Animator>().enabled = true;
 			}
 			GameObject.Find ("ButtonText").GetComponent<Text> ().text = "Find them to continue";
 			ttext.text = "When you think you've worked out who is the one you're looking for, press X when close to them";
