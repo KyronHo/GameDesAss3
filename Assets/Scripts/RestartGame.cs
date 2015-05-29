@@ -11,7 +11,7 @@ public class RestartGame : MonoBehaviour {
 	
 	void LoadLevel() {
 		if (level == 0) {
-			Application.LoadLevel ("Roman_Intro");
+			Application.LoadLevel ("Credits");
 		} else if (level == 1) {
 			Application.LoadLevel ("Roman_Level");
 		} else if (level == 2) {
@@ -20,6 +20,8 @@ public class RestartGame : MonoBehaviour {
 			Application.LoadLevel ("Sengoku_Level");
 		} else if (level == 4) {
 			Application.LoadLevel ("Mafia_Level");
+		}else if(level == -1){
+			Application.LoadLevel ("Tutorial");
 		}
 	}
 }
